@@ -13,36 +13,22 @@ string shift(string s) {
 }
 
 void insertionSort(char** s, int n) {
-    for(int ii=1; ii<n; ii++) {
+    int nn = n;
+    for(int ii=1; ii<nn; ii++) {
         char* temp = s[ii];
         int jj = ii - 1;
         // maybe just sum up index [:-2] and see which is bigger
-        while(jj>=0 and s[jj][n-1] > temp[n-1]) {
-            if(s[jj][n-1] == temp[n-1]) {
-                int n2 = n - 2;
-                while(jj > 0 and n2>=0) {
-                    if(s[jj][n2] == temp[n2]) {
-                        n--;
-                    }
-                    else if(s[jj][n2] > temp[n2]) {
-                        s[jj+1] = s[jj];
-                        jj -= 1;
-                        s[jj+1] = temp;
-                        break;
-                    }
-                    else {
-                        jj -= 1;
-                        s[jj+1] = temp;
-                        break;
-                    }
-                }
+        while(jj>=0 and s[jj][nn-1] >= temp[nn-1]) {
+            if(s[jj][nn-1] == temp[nn-1]) {
+                nn--;
+                continue;
             }
-            else {
-                s[jj+1] = s[jj];
-                jj -= 1;
-            }
+            s[jj+1] = s[jj];
+            jj -= 1;
+            nn = n;
         }
         s[jj+1] = temp;
+        nn = n;
     }
 }
 
@@ -65,11 +51,19 @@ int main(int argc, char * argv[]) {
                 insertionSort(ptr_lst, size);
 
                 for(int ii=0; ii<size; ii++) {
+                    if(string(ptr_lst[ii]) == input){
+                        cout << ii << endl;
+                    }
+                }
+
+                for(int ii=0; ii<size; ii++) {
                     for (int jj = 0; jj < size; jj++) {
                         cout << ptr_lst[ii][jj];
                     }
                     cout << endl;
                 }
+
+                cout << endl;
 
                 for(int ii=0; ii<size; ii++) {
                     delete[] ptr_lst[ii];

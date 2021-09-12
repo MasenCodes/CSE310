@@ -112,9 +112,9 @@
          </MakeCommands>
       </Target>
       </Build>
-      <Unit filename="/afs/asu.edu/users/m/r/l/mrlunt/CSE310/encode.cpp">
+      <Unit filename="/afs/asu.edu/users/m/r/l/mrlunt/CSE310/cmake-build-debug/main.cpp">
       </Unit>
-      <Unit filename="/afs/asu.edu/users/m/r/l/mrlunt/CSE310/main.cpp">
+      <Unit filename="/afs/asu.edu/users/m/r/l/mrlunt/CSE310/encode.cpp">
       </Unit>
       <Unit filename="/afs/asu.edu/users/m/r/l/mrlunt/CSE310/CMakeLists.txt">
           <Option virtualFolder="CMake Files\" />

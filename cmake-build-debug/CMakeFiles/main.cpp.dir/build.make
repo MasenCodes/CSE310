@@ -53,18 +53,18 @@ include CMakeFiles/main.cpp.dir/progress.make
 include CMakeFiles/main.cpp.dir/flags.make
 
 CMakeFiles/main.cpp.dir/main.cpp.o: CMakeFiles/main.cpp.dir/flags.make
-CMakeFiles/main.cpp.dir/main.cpp.o: ../main.cpp
+CMakeFiles/main.cpp.dir/main.cpp.o: main.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /afs/asu.edu/users/m/r/l/mrlunt/CSE310/cmake-build-debug/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/main.cpp.dir/main.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.cpp.dir/main.cpp.o -c /afs/asu.edu/users/m/r/l/mrlunt/CSE310/main.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/main.cpp.dir/main.cpp.o -c /afs/asu.edu/users/m/r/l/mrlunt/CSE310/cmake-build-debug/main.cpp
 
 CMakeFiles/main.cpp.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.cpp.dir/main.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /afs/asu.edu/users/m/r/l/mrlunt/CSE310/main.cpp > CMakeFiles/main.cpp.dir/main.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /afs/asu.edu/users/m/r/l/mrlunt/CSE310/cmake-build-debug/main.cpp > CMakeFiles/main.cpp.dir/main.cpp.i
 
 CMakeFiles/main.cpp.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.cpp.dir/main.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /afs/asu.edu/users/m/r/l/mrlunt/CSE310/main.cpp -o CMakeFiles/main.cpp.dir/main.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /afs/asu.edu/users/m/r/l/mrlunt/CSE310/cmake-build-debug/main.cpp -o CMakeFiles/main.cpp.dir/main.cpp.s
 
 CMakeFiles/main.cpp.dir/main.cpp.o.requires:
 .PHONY : CMakeFiles/main.cpp.dir/main.cpp.o.requires
