@@ -16,9 +16,31 @@ void insertionSort(char** s, int n) {
     for(int ii=1; ii<n; ii++) {
         char* temp = s[ii];
         int jj = ii - 1;
+        // maybe just sum up index [:-2] and see which is bigger
         while(jj>=0 and s[jj][n-1] > temp[n-1]) {
-            s[jj+1] = s[jj];
-            jj -= 1;
+            if(s[jj][n-1] == temp[n-1]) {
+                int n2 = n - 2;
+                while(jj > 0 and n2>=0) {
+                    if(s[jj][n2] == temp[n2]) {
+                        n--;
+                    }
+                    else if(s[jj][n2] > temp[n2]) {
+                        s[jj+1] = s[jj];
+                        jj -= 1;
+                        s[jj+1] = temp;
+                        break;
+                    }
+                    else {
+                        jj -= 1;
+                        s[jj+1] = temp;
+                        break;
+                    }
+                }
+            }
+            else {
+                s[jj+1] = s[jj];
+                jj -= 1;
+            }
         }
         s[jj+1] = temp;
     }
