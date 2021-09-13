@@ -17,8 +17,9 @@ void insertionSort(char** s, int n) {
     for(int ii=1; ii<nn; ii++) {
         char* temp = s[ii];
         int jj = ii - 1;
-        // maybe just sum up index [:-2] and see which is bigger
+
         while(jj>=0 and s[jj][nn-1] >= temp[nn-1]) {
+            // if equal compare next character down
             if(s[jj][nn-1] == temp[nn-1]) {
                 nn--;
                 continue;
@@ -37,8 +38,14 @@ int main(int argc, char * argv[]) {
         if (string(argv[1]) == "insertion") {
             string input;
             while (getline(cin, input)) {
+                // do not print out empty lines
+                if(input.empty()) {
+                    continue;
+                }
+
                 int size = int(input.size());
 
+                // declare pointer and fill array
                 char **ptr_lst = new char*[size];
                 for(int ii=0; ii<size; ii++) {
                     ptr_lst[ii] = new char[size];
@@ -48,23 +55,47 @@ int main(int argc, char * argv[]) {
                     input = shift(input);
                 }
 
+                // sort the array
                 insertionSort(ptr_lst, size);
 
+                // print the index original string appears in sorted array
+                bool found = true;
                 for(int ii=0; ii<size; ii++) {
-                    if(string(ptr_lst[ii]) == input){
+                    found = true;
+                    for(int jj=0; jj<size; jj++) {
+                       if(input.at(jj) != ptr_lst[ii][jj]) {
+                           found = false;
+                           break;
+                       }
+
+                    }
+                    if(found) {
                         cout << ii << endl;
+                        break;
                     }
                 }
 
-                for(int ii=0; ii<size; ii++) {
-                    for (int jj = 0; jj < size; jj++) {
-                        cout << ptr_lst[ii][jj];
+                // print the encoded message
+                int count = 1;
+                char temp = ptr_lst[0][0];
+                for(int ii=1; ii<size; ii++) {
+                    if(ptr_lst[ii][0] == temp) {
+                        count++;
                     }
-                    cout << endl;
+                    else {
+                        cout << count << " " << temp << " ";
+                        count = 1;
+                        temp = ptr_lst[ii][0];
+                    }
+                }
+                if(count > 1) {
+                    cout << count << " " << temp << " " << endl;
                 }
 
-                cout << endl;
+                // print out new line
+                cout << "\n" << endl;
 
+                // free up memory
                 for(int ii=0; ii<size; ii++) {
                     delete[] ptr_lst[ii];
                 }
@@ -75,7 +106,6 @@ int main(int argc, char * argv[]) {
             // come back after milestone
         }
     }
-
     return 0;
 }
 
