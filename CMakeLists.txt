@@ -7,5 +7,5 @@ set(CMAKE_CXX_STANDARD 14)
 
 add_executable(main.cpp main.cpp) # add more of these as needed to compile more code
 add_executable(encode.cpp encode.cpp)
-
+add_executable(decode.cpp decode.cpp)
 

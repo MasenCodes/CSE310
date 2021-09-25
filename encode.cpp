@@ -2,7 +2,11 @@
 #include <string>
 #include <cstring>
 
+#include <chrono>
+
 using namespace std;
+
+using namespace std::chrono;
 
 string shift(string s) {
     char ref = s[int(s.size()) - 1];
@@ -13,71 +17,110 @@ string shift(string s) {
     return s;
 }
 
-bool smaller(char* a, char* b) {
+bool smaller(char* a, char* b, int size) {
     // returns if a < b
-    if(a[0] == b[0]) {
-        int ii = 1;
-        while(a[ii] < b[ii]) {
-            ii++;
+    if(a[size - 1] == b[size - 1]) {
+        int ii = size - 2;
+        while(a[ii] == b[ii] and ii >= 0) {
+            ii--;
         }
         return a[ii] < b[ii];
     }
-    else return a[0] < b[0];
+    else return a[size - 1] < b[size - 1];
 }
 
-void merge(char** s, int l, int mid, int r) {
-    // indexes
-    int leftStart = l;
-    int leftEnd = mid;
-    int rightStart = mid+1;
-    int rightEnd = r;
+void merge(char** s, int l, int mid, int r, int n) {
+    // sizes and index
+    int leftSize = (mid-l) + 1;
+    int rightSize = r-mid;
+    int leftIndex = 0;
+    int rightIndex = 0;
 
     // create new memory
-    char** tempArray = new char*[(r-l) + 1];
-    for(int ii=0; ii<((r-l) + 1); ii++) {
-        tempArray[ii] = new char[strlen(s[0])];
+    char** leftArray = new char*[leftSize];
+    char** rightArray = new char*[rightSize];
+    for(int ii=0; ii<leftSize; ii++) {
+        leftArray[ii] = new char[n];
+    }
+    for(int ii=0; ii<rightSize; ii++) {
+        rightArray[ii] = new char[n];
     }
 
-    // after determining equality, fill temporary memory
-    int ii = l;
-    while(leftStart <= leftEnd and rightStart <= rightEnd) {
-        if(smaller(s[leftStart], s[rightStart])) {
-            tempArray[ii] = s[leftStart];
+    // fill arrays
+    for(int ii=l; ii<mid + 1; ii++) {
+        for(int jj=0; jj<n; jj++) {
+            leftArray[leftIndex][jj] = s[ii][jj];
+        }
+        leftIndex++;
+    }
+    for(int ii=mid + 1; ii<r + 1; ii++) {
+        for(int jj=0; jj<n; jj++) {
+            rightArray[rightIndex][jj] = s[ii][jj];
+        }
+        rightIndex++;
+    }
+
+    // reset and create indexes and begin comparison
+    leftIndex = 0, rightIndex = 0;
+    int leftStart = l;
+    int rightStart = mid + 1;
+    int start = l;
+
+    while(leftStart <= mid and rightStart <= r) {
+        if(smaller(leftArray[leftIndex], rightArray[rightIndex], n)) {
+            for(int ii=0; ii<n; ii++) {
+                s[start][ii] = leftArray[leftIndex][ii];
+            }
             leftStart++;
+            leftIndex++;
         }
         else {
-            tempArray[ii] = s[rightStart];
+            for(int ii=0; ii<n; ii++) {
+                s[start][ii] = rightArray[rightIndex][ii];
+            }
             rightStart++;
+            rightIndex++;
         }
-        ii++;
+        start++;
     }
 
     // one will execute to finish the sort
-    while(leftStart <= leftEnd) {
-        tempArray[ii] = s[leftStart];
+    while(leftStart <= mid) {
+        for(int ii=0; ii<n; ii++) {
+            s[start][ii] = leftArray[leftIndex][ii];
+        }
         leftStart++;
-        ii++;
+        leftIndex++;
+        start++;
     }
-    while(rightStart <= rightEnd) {
-        tempArray[ii] = s[rightStart];
+    while(rightStart <= r) {
+        for(int ii=0; ii<n; ii++) {
+            s[start][ii] = rightArray[rightIndex][ii];
+        }
         rightStart++;
-        ii++;
+        rightIndex++;
+        start++;
     }
 
-    // copy temp memory back to original and delete it
-    for(ii=l; ii<=r; ii++) {
-        s[ii] = tempArray[ii];
-        delete[] tempArray[ii-l];
+    // free memory
+    leftSize = (mid-l) + 1;
+    rightSize = r-mid;
+    for(int ii=0; ii<leftSize; ii++) {
+        delete[] leftArray[ii];
     }
-    delete[] tempArray;
+    for(int ii=0; ii<rightSize; ii++) {
+        delete[] rightArray[ii];
+    }
+    delete[] leftArray;
+    delete[] rightArray;
 }
 
-void mergeSort(char** s, int l, int r) {
+void mergeSort(char** s, int l, int r, int n) {
     if(l < r) {
         int mid = (l + r) / 2;
-        mergeSort(s, l, mid);
-        mergeSort(s, mid + 1, r);
-        merge(s, l, mid, r);
+        mergeSort(s, l, mid, n);
+        mergeSort(s, mid + 1, r, n);
+        merge(s, l, mid, r, n);
     }
     else {
         return;
@@ -106,16 +149,27 @@ void insertionSort(char** s, int n) {
 }
 
 int main(int argc, char * argv[]) {
+    auto start = high_resolution_clock::now();
     if (argc > 1) {
         if (string(argv[1]) == "insertion") {
             string input;
+            bool goneOnce = false;
             while (getline(cin, input)) {
-                // do not print out empty lines
-                if(input.empty()) {
+                // handling new lines / end of file
+                if(input.empty()) { // maybe add == 13 case here
+                    cout << endl;
                     continue;
                 }
+                if(goneOnce) {
+                    cout << endl;
+                }
 
-                int size = int(input.size());
+                // delete newline char
+                int size = int(input.length());
+                if(input[size - 1] == 13) {
+                    input.erase(size - 1);
+                    size -= 1;
+                }
 
                 // declare pointer and fill array
                 char **ptr_lst = new char*[size];
@@ -139,6 +193,74 @@ int main(int argc, char * argv[]) {
                            found = false;
                            break;
                        }
+                    }
+                    if(found) {
+                        cout << ii << endl;
+                        break;
+                    }
+                }
+
+                // print the encoded message
+                int count = 1;
+                char temp = ptr_lst[0][0];
+                for(int ii=1; ii<size; ii++) {
+                    if(ptr_lst[ii][0] == temp) {
+                        count++;
+                    }
+                    else {
+                        cout << count << " " << temp << " ";
+                        count = 1;
+                        temp = ptr_lst[ii][0];
+                    }
+                }
+                cout << count << " " << temp;
+
+                // free up memory
+                for(int ii=0; ii<size; ii++) {
+                    delete[] ptr_lst[ii];
+                }
+                delete[] ptr_lst;
+                goneOnce = true;
+            }
+        }
+        else if (string(argv[1]) == "mergesort") {
+            // come back after milestone
+            string input;
+            bool goneOnce = false;
+            while (getline(cin, input)) {
+                // handling new lines / end of file
+                if(input.empty()) {  // this is working
+                    cout << endl;
+                    continue;
+                }
+                if(goneOnce) {
+                    cout << endl;
+                }
+
+                int size = int(input.size());
+
+                // declare pointer and fill array
+                char **ptr_lst = new char*[size];
+                for(int ii=0; ii<size; ii++) {
+                    ptr_lst[ii] = new char[size];
+                    for(int jj=0; jj<size; jj++) {
+                        ptr_lst[ii][jj] = input.at(jj);
+                    }
+                    input = shift(input);
+                }
+
+                // sort the array
+                mergeSort(ptr_lst, 0, size-1, size);
+
+                // print the index original string appears in sorted array
+                bool found = true;
+                for(int ii=0; ii<size; ii++) {
+                    found = true;
+                    for(int jj=0; jj<size; jj++) {
+                        if(input.at(jj) != ptr_lst[ii][jj]) {
+                            found = false;
+                            break;
+                        }
 
                     }
                     if(found) {
@@ -161,81 +283,21 @@ int main(int argc, char * argv[]) {
                     }
                 }
 
-                cout << count << " " << temp << endl;
-                cout << endl;
+                cout << count << " " << temp;
 
                 // free up memory
                 for(int ii=0; ii<size; ii++) {
                     delete[] ptr_lst[ii];
                 }
                 delete[] ptr_lst;
-            }
-        }
-        else if (string(argv[1]) == "mergesort") {
-            // come back after milestone
-            string input;
-            while (getline(cin, input)) {
-                // do not print out empty lines
-                if (input.empty()) {
-                    continue;
-                }
-
-                int size = int(input.size());
-
-                // declare pointer and fill array
-                char **ptr_lst = new char *[size];
-                for (int ii = 0; ii < size; ii++) {
-                    ptr_lst[ii] = new char[size];
-                    for (int jj = 0; jj < size; jj++) {
-                        ptr_lst[ii][jj] = input.at(jj);
-                    }
-                    input = shift(input);
-                }
-
-                // sort the array
-                mergeSort(ptr_lst, 0, size-1);
-
-                // print the index original string appears in sorted array
-                bool found = true;
-                for (int ii = 0; ii < size; ii++) {
-                    found = true;
-                    for (int jj = 0; jj < size; jj++) {
-                        if (input.at(jj) != ptr_lst[ii][jj]) {
-                            found = false;
-                            break;
-                        }
-
-                    }
-                    if (found) {
-                        cout << ii << endl;
-                        break;
-                    }
-                }
-
-                // print the encoded message
-                int count = 1;
-                char temp = ptr_lst[0][0];
-                for (int ii = 1; ii < size; ii++) {
-                    if (ptr_lst[ii][0] == temp) {
-                        count++;
-                    } else {
-                        cout << count << " " << temp << " ";
-                        count = 1;
-                        temp = ptr_lst[ii][0];
-                    }
-                }
-
-                cout << count << " " << temp << endl;
-                cout << endl;
-
-                // free up memory
-                for (int ii = 0; ii < size; ii++) {
-                    delete[] ptr_lst[ii];
-                }
-                delete[] ptr_lst;
+                goneOnce = true;
             }
         }
     }
+    auto stop = high_resolution_clock::now();
+    auto duration = duration_cast<microseconds>(stop - start);
+    cout << "Time taken by function: "
+         << duration.count() << " microseconds" << endl;
     return 0;
 }
 

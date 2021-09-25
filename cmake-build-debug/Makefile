@@ -102,6 +102,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named decode.cpp
+
+# Build rule for target.
+decode.cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 decode.cpp
+.PHONY : decode.cpp
+
+# fast build rule for target.
+decode.cpp/fast:
+	$(MAKE) -f CMakeFiles/decode.cpp.dir/build.make CMakeFiles/decode.cpp.dir/build
+.PHONY : decode.cpp/fast
+
+#=============================================================================
 # Target rules for targets named encode.cpp
 
 # Build rule for target.
@@ -126,6 +139,30 @@ main.cpp: cmake_check_build_system
 main.cpp/fast:
 	$(MAKE) -f CMakeFiles/main.cpp.dir/build.make CMakeFiles/main.cpp.dir/build
 .PHONY : main.cpp/fast
+
+decode.o: decode.cpp.o
+.PHONY : decode.o
+
+# target to build an object file
+decode.cpp.o:
+	$(MAKE) -f CMakeFiles/decode.cpp.dir/build.make CMakeFiles/decode.cpp.dir/decode.cpp.o
+.PHONY : decode.cpp.o
+
+decode.i: decode.cpp.i
+.PHONY : decode.i
+
+# target to preprocess a source file
+decode.cpp.i:
+	$(MAKE) -f CMakeFiles/decode.cpp.dir/build.make CMakeFiles/decode.cpp.dir/decode.cpp.i
+.PHONY : decode.cpp.i
+
+decode.s: decode.cpp.s
+.PHONY : decode.s
+
+# target to generate assembly for a file
+decode.cpp.s:
+	$(MAKE) -f CMakeFiles/decode.cpp.dir/build.make CMakeFiles/decode.cpp.dir/decode.cpp.s
+.PHONY : decode.cpp.s
 
 encode.o: encode.cpp.o
 .PHONY : encode.o
@@ -181,10 +218,14 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... decode.cpp"
 	@echo "... edit_cache"
 	@echo "... encode.cpp"
 	@echo "... main.cpp"
 	@echo "... rebuild_cache"
+	@echo "... decode.o"
+	@echo "... decode.i"
+	@echo "... decode.s"
 	@echo "... encode.o"
 	@echo "... encode.i"
 	@echo "... encode.s"
