@@ -1,12 +1,10 @@
 #include <iostream>
 #include <string>
 #include <cstring>
-#include <chrono>
 
 
 using namespace std;
 
-using namespace std::chrono;
 
 void merge(char* s, int l, int mid, int r, int n) {
     // sizes and index
@@ -95,7 +93,6 @@ void insertionSort(char* s, int n) {
 }
 
 int main(int argc, char * argv[]) {
-    auto start = high_resolution_clock::now();
     if (argc > 1) {
         if (string(argv[1]) == "insertion") {
             string input;
@@ -319,10 +316,6 @@ int main(int argc, char * argv[]) {
 
         }
     }
-    auto stop = high_resolution_clock::now();
-    auto duration = duration_cast<microseconds>(stop - start);
-    cout << "Time taken by function: "
-         << duration.count() << " microseconds" << endl;
     return 0;
 }
 

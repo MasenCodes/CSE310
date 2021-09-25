@@ -2,11 +2,9 @@
 #include <string>
 #include <cstring>
 
-#include <chrono>
 
 using namespace std;
 
-using namespace std::chrono;
 
 string shift(string s) {
     char ref = s[int(s.size()) - 1];
@@ -149,9 +147,10 @@ void insertionSort(char** s, int n) {
 }
 
 int main(int argc, char * argv[]) {
-    auto start = high_resolution_clock::now();
     if (argc > 1) {
         if (string(argv[1]) == "insertion") {
+            string charsOnly;
+            int charCount = 0;
             string input;
             bool goneOnce = false;
             while (getline(cin, input)) {
@@ -294,10 +293,7 @@ int main(int argc, char * argv[]) {
             }
         }
     }
-    auto stop = high_resolution_clock::now();
-    auto duration = duration_cast<microseconds>(stop - start);
-    cout << "Time taken by function: "
-         << duration.count() << " microseconds" << endl;
+    cout << '\n';
     return 0;
 }
 
