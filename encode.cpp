@@ -148,152 +148,83 @@ void insertionSort(char** s, int n) {
 
 int main(int argc, char * argv[]) {
     if (argc > 1) {
-        if (string(argv[1]) == "insertion") {
-            string charsOnly;
-            int charCount = 0;
-            string input;
-            bool goneOnce = false;
-            while (getline(cin, input)) {
-                // handling new lines / end of file
-                if(input.empty()) { // maybe add == 13 case here
-                    cout << endl;
-                    continue;
-                }
-                if(goneOnce) {
-                    cout << endl;
-                }
+        string charsOnly;
+        int charCount = 0;
+        string input;
+        bool goneOnce = false;
+        while (getline(cin, input)) {
+            // handling new lines / end of file
+            if (input.empty()) { // maybe add == 13 case here
+                cout << endl;
+                continue;
+            }
+            if (goneOnce) {
+                cout << endl;
+            }
 
-                // delete newline char
-                int size = int(input.length());
-                if(input[size - 1] == 13) {
-                    input.erase(size - 1);
-                    size -= 1;
-                }
+            // delete newline char
+            int size = int(input.length());
+            if (input[size - 1] == 13) {
+                input.erase(size - 1);
+                size -= 1;
+            }
 
-                // declare pointer and fill array
-                char **ptr_lst = new char*[size];
-                for(int ii=0; ii<size; ii++) {
-                    ptr_lst[ii] = new char[size];
-                    for(int jj=0; jj<size; jj++) {
-                        ptr_lst[ii][jj] = input.at(jj);
-                    }
-                    input = shift(input);
+            // declare pointer and fill array
+            char **ptr_lst = new char *[size];
+            for (int ii = 0; ii < size; ii++) {
+                ptr_lst[ii] = new char[size];
+                for (int jj = 0; jj < size; jj++) {
+                    ptr_lst[ii][jj] = input.at(jj);
                 }
+                input = shift(input);
+            }
 
-                // sort the array
+            // sort the array
+            if (string(argv[1]) == "insertion") {
                 insertionSort(ptr_lst, size);
+            } else {
+                mergeSort(ptr_lst, 0, size - 1, size);
+            }
 
-                // print the index original string appears in sorted array
-                bool found = true;
-                for(int ii=0; ii<size; ii++) {
-                    found = true;
-                    for(int jj=0; jj<size; jj++) {
-                       if(input.at(jj) != ptr_lst[ii][jj]) {
-                           found = false;
-                           break;
-                       }
-                    }
-                    if(found) {
-                        cout << ii << endl;
+            // print the index original string appears in sorted array
+            bool found = true;
+            for (int ii = 0; ii < size; ii++) {
+                found = true;
+                for (int jj = 0; jj < size; jj++) {
+                    if (input.at(jj) != ptr_lst[ii][jj]) {
+                        found = false;
                         break;
                     }
                 }
-
-                // print the encoded message
-                int count = 1;
-                char temp = ptr_lst[0][0];
-                for(int ii=1; ii<size; ii++) {
-                    if(ptr_lst[ii][0] == temp) {
-                        count++;
-                    }
-                    else {
-                        cout << count << " " << temp << " ";
-                        count = 1;
-                        temp = ptr_lst[ii][0];
-                    }
+                if (found) {
+                    cout << ii << endl;
+                    break;
                 }
-                cout << count << " " << temp;
-
-                // free up memory
-                for(int ii=0; ii<size; ii++) {
-                    delete[] ptr_lst[ii];
-                }
-                delete[] ptr_lst;
-                goneOnce = true;
             }
-        }
-        else if (string(argv[1]) == "mergesort") {
-            // come back after milestone
-            string input;
-            bool goneOnce = false;
-            while (getline(cin, input)) {
-                // handling new lines / end of file
-                if(input.empty()) {  // this is working
-                    cout << endl;
-                    continue;
+
+            // print the encoded message
+            int count = 1;
+            char temp = ptr_lst[0][0];
+            for (int ii = 1; ii < size; ii++) {
+                if (ptr_lst[ii][0] == temp) {
+                    count++;
+                } else {
+                    cout << count << " " << temp << " ";
+                    count = 1;
+                    temp = ptr_lst[ii][0];
                 }
-                if(goneOnce) {
-                    cout << endl;
-                }
-
-                int size = int(input.size());
-
-                // declare pointer and fill array
-                char **ptr_lst = new char*[size];
-                for(int ii=0; ii<size; ii++) {
-                    ptr_lst[ii] = new char[size];
-                    for(int jj=0; jj<size; jj++) {
-                        ptr_lst[ii][jj] = input.at(jj);
-                    }
-                    input = shift(input);
-                }
-
-                // sort the array
-                mergeSort(ptr_lst, 0, size-1, size);
-
-                // print the index original string appears in sorted array
-                bool found = true;
-                for(int ii=0; ii<size; ii++) {
-                    found = true;
-                    for(int jj=0; jj<size; jj++) {
-                        if(input.at(jj) != ptr_lst[ii][jj]) {
-                            found = false;
-                            break;
-                        }
-
-                    }
-                    if(found) {
-                        cout << ii << endl;
-                        break;
-                    }
-                }
-
-                // print the encoded message
-                int count = 1;
-                char temp = ptr_lst[0][0];
-                for(int ii=1; ii<size; ii++) {
-                    if(ptr_lst[ii][0] == temp) {
-                        count++;
-                    }
-                    else {
-                        cout << count << " " << temp << " ";
-                        count = 1;
-                        temp = ptr_lst[ii][0];
-                    }
-                }
-
-                cout << count << " " << temp;
-
-                // free up memory
-                for(int ii=0; ii<size; ii++) {
-                    delete[] ptr_lst[ii];
-                }
-                delete[] ptr_lst;
-                goneOnce = true;
             }
+            cout << count << " " << temp;
+
+            // free up memory
+            for (int ii = 0; ii < size; ii++) {
+                delete[] ptr_lst[ii];
+            }
+            delete[] ptr_lst;
+            goneOnce = true;
         }
+        cout << '\n';
     }
-    cout << '\n';
     return 0;
 }
 

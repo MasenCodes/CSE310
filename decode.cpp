@@ -94,226 +94,118 @@ void insertionSort(char* s, int n) {
 
 int main(int argc, char * argv[]) {
     if (argc > 1) {
-        if (string(argv[1]) == "insertion") {
-            string input;
-            int sortedIndex = -1;
-            int stringSize = 0;
-            bool goneOnce = false;
-            while (getline(cin, input)) {
-                // skip blanks
-                if(cin.eof()) {
-                    break;
-                }
-                if(input.empty()) {
-                    cout << endl;
-                    continue;
-                }
-                if(0 > sortedIndex) { // grab the original strings index given from encode
-                    sortedIndex = stoi(input);
-                    continue;
-                }
+        string input;
+        int sortedIndex = -1;
+        int stringSize = 0;
+        bool goneOnce = false;
+        while (getline(cin, input)) {
+            // skip blanks
+            if(cin.eof()) {
+                break;
+            }
+            if(input.empty()) {
+                cout << endl;
+                continue;
+            }
+            if(0 > sortedIndex) { // grab the original strings index given from encode
+                sortedIndex = stoi(input);
+                continue;
+            }
 
-                else {
-                    // determine the len of original string
-                    string value = "0";
-                    for(char c: input) {
-                        if(c < 58 and c > 47) {
-                            value += c;
-                        }
-                        else {
-                            stringSize += stoi(value);
-                            value = "0";
-                        }
-                    }
-                }
-
-                // declare pointer and fill array
-                char* first = new char[stringSize];
-                char* last = new char[stringSize];
-
-                // fill the first column of og string in both arrays
+            else {
+                // determine the len of original string
                 string value = "0";
-                bool firstSpace = false;
-                for(int ii=0, jj=0; ii<stringSize and jj<input.size(); ii++) {
-                    if(input.at(jj) == 32 and !firstSpace) {  // skip spaces
-                        ii--;
-                        jj++;
-                        firstSpace = true;
-                        continue;
-                    }
-                    if(input.at(jj) < 58 and input.at(jj) > 47) {  // find numbers
-                        value += input.at(jj);
-                        ii--;
+                for(char c: input) {
+                    if(c < 58 and c > 47) {
+                        value += c;
                     }
                     else {
-                        for(int kk=0; kk<stoi(value); kk++) {  // add char k times
-                            first[ii] = input.at(jj);
-                            last[ii] = input.at(jj);
-                            ii++;
-                        }
-                        ii--; // loop will take care of one of these done in previous loop
+                        stringSize += stoi(value);
                         value = "0";
                     }
-                    firstSpace = false;
-                    jj++;
                 }
+            }
 
+            // declare pointer and fill array
+            char* first = new char[stringSize];
+            char* last = new char[stringSize];
+
+            // fill the first column of og string in both arrays
+            string value = "0";
+            bool firstSpace = false;
+            for(int ii=0, jj=0; ii<stringSize and jj<input.size(); ii++) {
+                if(input.at(jj) == 32 and !firstSpace) {  // skip spaces
+                    ii--;
+                    jj++;
+                    firstSpace = true;
+                    continue;
+                }
+                if(input.at(jj) < 58 and input.at(jj) > 47) {  // find numbers
+                    value += input.at(jj);
+                    ii--;
+                }
+                else {
+                    for(int kk=0; kk<stoi(value); kk++) {  // add char k times
+                        first[ii] = input.at(jj);
+                        last[ii] = input.at(jj);
+                        ii++;
+                    }
+                    ii--; // loop will take care of one of these done in previous loop
+                    value = "0";
+                }
+                firstSpace = false;
+                jj++;
+            }
+
+            if (string(argv[1]) == "insertion") {
                 // sort the column to achieve "last" column from og string
                 insertionSort(last, stringSize);
-
-                // comparison variables, fill used with zeros for booleans
-                int posArray[stringSize];
-                int usedArray[stringSize];
-                for(int ii=0; ii<stringSize; ii++) {
-                    usedArray[ii] = 0;
-                }
-
-                // decode arrays
-                for(int ii=0; ii<stringSize; ii++) {  // index to access last and assigning index for first
-                    for(int jj=0; jj<stringSize; jj++) {  // index for first
-                        if(first[ii] == last[jj] and usedArray[jj] != 1) {
-                            usedArray[jj] = 1;
-                            posArray[jj] = ii;
-                            break;
-                        }
-                    }
-                }
-
-                // make the original string
-                char* original = new char[stringSize];
-                int pos = posArray[sortedIndex];
-                for(int ii=stringSize - 1; ii>=0; ii--) {
-                    original[ii] = first[pos];
-                    pos = posArray[pos];
-                }
-
-                // carry out decoded string
-                for(int ii=0; ii<stringSize; ii++) {
-                    cout << original[ii];
-                }
-                if(stringSize) {
-                    cout << endl;
-                }
-
-                // clean up and reset variables
-                delete[] original;
-                delete[] first;
-                delete[] last;
-                sortedIndex = -1;
-                stringSize = 0;
-                goneOnce = true;
             }
-        }
-        else if (string(argv[1]) == "mergesort") {
-            string input;
-            int sortedIndex = -1;
-            int stringSize = 0;
-            bool goneOnce = false;
-            while (getline(cin, input)) {
-                // skip blanks
-                if(cin.eof()) {
-                    break;
-                }
-                if(input.empty()) {
-                    cout << endl;
-                    continue;
-                }
-                if(0 > sortedIndex) { // grab the original strings index given from encode
-                    sortedIndex = stoi(input);
-                    continue;
-                }
-
-                else {
-                    // determine the len of original string
-                    string value = "0";
-                    for(char c: input) {
-                        if(c < 58 and c > 47) {
-                            value += c;
-                        }
-                        else {
-                            stringSize += stoi(value);
-                            value = "0";
-                        }
-                    }
-                }
-
-                // declare pointer and fill array
-                char* first = new char[stringSize];
-                char* last = new char[stringSize];
-
-                // fill the first column of og string in both arrays
-                string value = "0";
-                bool firstSpace = false;
-                for(int ii=0, jj=0; ii<stringSize and jj<input.size(); ii++) {
-                    if(input.at(jj) == 32 and !firstSpace) {  // skip spaces
-                        ii--;
-                        jj++;
-                        firstSpace = true;
-                        continue;
-                    }
-                    if(input.at(jj) < 58 and input.at(jj) > 47) {  // find numbers
-                        value += input.at(jj);
-                        ii--;
-                    }
-                    else {
-                        for(int kk=0; kk<stoi(value); kk++) {  // add char k times
-                            first[ii] = input.at(jj);
-                            last[ii] = input.at(jj);
-                            ii++;
-                        }
-                        ii--; // loop will take care of one of these done in previous loop
-                        value = "0";
-                    }
-                    firstSpace = false;
-                    jj++;
-                }
-
-                // sort the column to achieve "last" column from og string
+            else {
                 mergeSort(last, 0, stringSize - 1, stringSize);
-
-                // comparison variables, fill used with zeros for booleans
-                int posArray[stringSize];
-                int usedArray[stringSize];
-                for(int ii=0; ii<stringSize; ii++) {
-                    usedArray[ii] = 0;
-                }
-
-                // decode arrays
-                for(int ii=0; ii<stringSize; ii++) {  // index to access last and assigning index for first
-                    for(int jj=0; jj<stringSize; jj++) {  // index for first
-                        if(first[ii] == last[jj] and usedArray[jj] != 1) {
-                            usedArray[jj] = 1;
-                            posArray[jj] = ii;
-                            break;
-                        }
-                    }
-                }
-
-                // make the original string
-                char* original = new char[stringSize];
-                int pos = posArray[sortedIndex];
-                for(int ii=stringSize - 1; ii>=0; ii--) {
-                    original[ii] = first[pos];
-                    pos = posArray[pos];
-                }
-
-                // carry out decoded string
-                for(int ii=0; ii<stringSize; ii++) {
-                    cout << original[ii];
-                }
-                if(stringSize) {
-                    cout << endl;
-                }
-
-                // clean up and reset variables
-                delete[] original;
-                delete[] first;
-                delete[] last;
-                sortedIndex = -1;
-                stringSize = 0;
-                goneOnce = true;
             }
 
+            // comparison variables, fill used with zeros for booleans
+            int posArray[stringSize];
+            int usedArray[stringSize];
+            for(int ii=0; ii<stringSize; ii++) {
+                usedArray[ii] = 0;
+            }
+
+            // decode arrays
+            for(int ii=0; ii<stringSize; ii++) {  // index to access last and assigning index for first
+                for(int jj=0; jj<stringSize; jj++) {  // index for first
+                    if(first[ii] == last[jj] and usedArray[jj] != 1) {
+                        usedArray[jj] = 1;
+                        posArray[jj] = ii;
+                        break;
+                    }
+                }
+            }
+
+            // make the original string
+            char* original = new char[stringSize];
+            int pos = posArray[sortedIndex];
+            for(int ii=stringSize - 1; ii>=0; ii--) {
+                original[ii] = first[pos];
+                pos = posArray[pos];
+            }
+
+            // carry out decoded string
+            for(int ii=0; ii<stringSize; ii++) {
+                cout << original[ii];
+            }
+            if(stringSize) {
+                cout << endl;
+            }
+
+            // clean up and reset variables
+            delete[] original;
+            delete[] first;
+            delete[] last;
+            sortedIndex = -1;
+            stringSize = 0;
+            goneOnce = true;
         }
     }
     return 0;
