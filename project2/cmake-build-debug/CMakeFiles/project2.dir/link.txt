@@ -1,0 +1,1 @@
+/usr/bin/c++   -g    CMakeFiles/project2.dir/storm.cpp.o  -o project2 -rdynamic 

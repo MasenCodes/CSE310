@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/afs/asu.edu/users/m/r/l/mrlunt/CSE310Proj2/defns.h
+
+/afs/asu.edu/users/m/r/l/mrlunt/CSE310Proj2/storm.cpp
+defns.h
+/afs/asu.edu/users/m/r/l/mrlunt/CSE310Proj2/defns.h
+string
+-
+cstring
+-
+fstream
+-
+iostream
+-
+cstdlib
+-
+
