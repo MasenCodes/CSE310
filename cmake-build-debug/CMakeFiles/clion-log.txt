@@ -1,4 +1,1 @@
-/usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /afs/asu.edu/users/m/r/l/mrlunt/CSE310
--- Configuring done
--- Generating done
--- Build files have been written to: /afs/asu.edu/users/m/r/l/mrlunt/CSE310/cmake-build-debug
+CMakeLists.txt not found in C:\dev-reference\CSE310 Select CMakeLists.txt
