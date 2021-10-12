@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/afs/asu.edu/users/m/r/l/mrlunt/CSE310/decode.cpp
+iostream
+-
+string
+-
+cstring
+-
+chrono
+-
+

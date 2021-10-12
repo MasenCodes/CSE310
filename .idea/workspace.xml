@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="Project" targetName="main.cpp" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b18cb2b4-5320-4917-8097-1c4b0fe2a8ea" name="Changes" comment="Only failing anne chapters">
+      <change beforePath="$PROJECT_DIR$/project1/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/project1/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/project1" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="1xeSckj66xQFrPkYn99xm1Nza9e" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="cidr.known.project.marker" value="true" />
+    <property name="cmake.loaded.for.project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RunManager" selected="CMake Application.encode">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="decode.cpp" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="mergesort" REDIRECT_INPUT="true" REDIRECT_INPUT_PATH="$PROJECT_DIR$/ref_input/encoded_tongue-twisters.txt" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="decode.cpp" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Project" RUN_TARGET_NAME="decode.cpp">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="encode" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="insertion" REDIRECT_INPUT="true" REDIRECT_INPUT_PATH="$PROJECT_DIR$/test_input/tongue-twisters.txt" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="encode.cpp" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Project" RUN_TARGET_NAME="encode.cpp">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="CMake Application.encode" />
+      <item itemvalue="CMake Application.decode.cpp" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b18cb2b4-5320-4917-8097-1c4b0fe2a8ea" name="Changes" comment="" />
+      <created>1630714142983</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1630714142983</updated>
+      <workItem from="1630714146337" duration="1908000" />
+      <workItem from="1630797139067" duration="5598000" />
+      <workItem from="1630967514949" duration="9830000" />
+      <workItem from="1630984449174" duration="125000" />
+      <workItem from="1631033520677" duration="3634000" />
+      <workItem from="1631155758322" duration="1742000" />
+      <workItem from="1631207617605" duration="1494000" />
+      <workItem from="1631238646373" duration="6273000" />
+      <workItem from="1631315154787" duration="10934000" />
+      <workItem from="1631393769861" duration="4973000" />
+      <workItem from="1631408643976" duration="1720000" />
+      <workItem from="1631452620388" duration="2354000" />
+      <workItem from="1631474961368" duration="8078000" />
+      <workItem from="1631487832720" duration="3356000" />
+      <workItem from="1631502598799" duration="1660000" />
+      <workItem from="1631650235244" duration="253000" />
+      <workItem from="1631756279433" duration="438000" />
+      <workItem from="1631813012472" duration="3292000" />
+      <workItem from="1632008747819" duration="6782000" />
+      <workItem from="1632181201657" duration="3030000" />
+      <workItem from="1632269170447" duration="10975000" />
+      <workItem from="1632360092848" duration="4744000" />
+      <workItem from="1632417840575" duration="6984000" />
+      <workItem from="1632428474934" duration="573000" />
+      <workItem from="1632440378967" duration="124000" />
+      <workItem from="1632440563098" duration="3627000" />
+      <workItem from="1632514978483" duration="19723000" />
+      <workItem from="1632598698183" duration="3340000" />
+      <workItem from="1632684325595" duration="1750000" />
+      <workItem from="1632699686575" duration="648000" />
+      <workItem from="1633379942194" duration="302000" />
+    </task>
+    <task id="LOCAL-00001" summary="added shift and read">
+      <created>1630977554940</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1630977554940</updated>
+    </task>
+    <task id="LOCAL-00002" summary="added insertion sort">
+      <created>1630978620878</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1630978620878</updated>
+    </task>
+    <task id="LOCAL-00003" summary="make insertionSort using pointers">
+      <created>1631209147346</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1631209147346</updated>
+    </task>
+    <task id="LOCAL-00004" summary="fixed insertion sort">
+      <created>1631244588278</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1631244588278</updated>
+    </task>
+    <task id="LOCAL-00005" summary="WORKING!!!!">
+      <created>1631326672615</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1631326672615</updated>
+    </task>
+    <task id="LOCAL-00006" summary="just need to cross compare if strings are == at searching index">
+      <created>1631398653861</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1631398653861</updated>
+    </task>
+    <task id="LOCAL-00007" summary="EVERYTHING IS WORKING, just encode the array">
+      <created>1631410359427</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1631410359427</updated>
+    </task>
+    <task id="LOCAL-00008" summary="EVERYTHING IS WORKING, just encode the array">
+      <created>1631481780304</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1631481780304</updated>
+    </task>
+    <task id="LOCAL-00009" summary="done with project, gradescope has issues">
+      <created>1631503720911</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1631503720911</updated>
+    </task>
+    <task id="LOCAL-00010" summary="debug mergesort">
+      <created>1632282093267</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1632282093267</updated>
+    </task>
+    <task id="LOCAL-00011" summary="newline error, everything else works">
+      <created>1632537770294</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1632537770294</updated>
+    </task>
+    <task id="LOCAL-00012" summary="This is my best working attempt so far">
+      <created>1632604751778</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1632604751778</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Only failing anne chapters">
+      <created>1632686207264</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1632686207264</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="added shift and read" />
+    <MESSAGE value="added insertion sort" />
+    <MESSAGE value="make insertionSort using pointers" />
+    <MESSAGE value="fixed insertion sort" />
+    <MESSAGE value="WORKING!!!!" />
+    <MESSAGE value="just need to cross compare if strings are == at searching index" />
+    <MESSAGE value="EVERYTHING IS WORKING, just encode the array" />
+    <MESSAGE value="done with project, gradescope has issues" />
+    <MESSAGE value="debug mergesort" />
+    <MESSAGE value="newline error, everything else works" />
+    <MESSAGE value="This is my best working attempt so far" />
+    <MESSAGE value="Only failing anne chapters" />
+    <option name="LAST_COMMIT_MESSAGE" value="Only failing anne chapters" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
