@@ -8,6 +8,8 @@
 
 using namespace std;
 
+string SPACE = "        ";
+
 int monthToInt(string monthName) {
     if(monthName == "January") {
         return 1;
@@ -49,19 +51,14 @@ int monthToInt(string monthName) {
 }
 
 void printEvent(storm_event* event) {
-    cout << "Event ID: " << event->event_id << endl;
-    cout << "State: " << event->state << endl;
-    cout << "Year: " << event->year << endl;
-    cout << "Month Name: " << event->month_name << endl;
-    cout << "Event Type: " << event->event_type << endl;
-    cout << "CZ Type: " << event->cz_type << endl;
-    cout << "CZ Name: " << event->cz_name << endl;
-    cout << "Injuries Direct: " << event->injuries_direct << endl;
-    cout << "Injuries Indirect: " << event->injuries_indirect << endl;
-    cout << "Deaths Direct: " << event->deaths_direct << endl;
-    cout << "Deaths Indirect: " << event->deaths_indirect << endl;
-    cout << "Damage Property: " << event->damage_property << endl;
-    cout << "Damage Crops: " << event->damage_crops << endl;
+    cout << '\n';
+    cout << SPACE << "state: " << event->state << endl;
+    cout << SPACE << "event_id: " << event->event_id << endl;
+    cout << SPACE << "year: " << event->year << endl;
+    cout << SPACE << "event_type: " << event->event_type << endl;
+    cout << SPACE << "cz_type: " << event->cz_type << endl;
+    cout << SPACE << "cz_name: " << event->cz_name << endl;
+    cout << '\n';
 }
 
 void printFatality(fatality_event* fatality) {
@@ -325,6 +322,16 @@ bool largerThan(bst* p, storm_event* event, string field) {
     return false;
 }
 
+bool equal(bst* p, storm_event* event, string field) {
+    if(field == "state") {
+        return p->s == event->state;
+    }
+    else if(field == "month_name") {
+        return monthToInt(p->s) == monthToInt(event->month_name);
+    }
+    return false;
+}
+
 void findAndPrint(bst* head, string leftBound, string rightBound, int year, string field) {
     // traverse the tree with the given field for the query and print out matching results
     if(field == "state") {
@@ -339,7 +346,7 @@ void addToTree(bst* head, storm_event* event, int eventIndex, string field) {
     // left > right
     bst* p = head;
     while(p->left and p->right) {
-        if (p->s == event->state) { // compare by id
+        if (equal(p, event, field)) { // compare by id
             if (largerThan(p, event, field)) {
                 p = p->left;
             }
@@ -410,44 +417,53 @@ int main(int argc, char * argv[]) {
             }
         }
 
-
-
         // handle range queries here
         string line;
         string queries[5];  // type = 0 | year = 1 | field = 2 | leftBound = 3 | rightBound = 4
         string numberOfQueries;
         getline(cin, numberOfQueries); // first line is always number
+        numberOfQueries = numberOfQueries.substr(0, numberOfQueries.length() - 1); // remove carriage return
 
+        cout << numberOfQueries << "\n\n"; // start the printing process
 
+        // read all queries
         while(getline(cin, line)) {
-            // load in the query
+            // load the line
             int queryIndex = 0;
-            string temp = "";
+            string temp;
             for(char c: line) {
                 if(c == ' ') {
                     queries[queryIndex] = temp;
                     queryIndex++;
                     temp = "";
                 }
-                else {
+                else if(c != '\"' and c != '\r') {
                     temp += c;
                 }
             }
             queries[4] = temp;
+
             // build the tree for each query
             bst* head = new bst;
-            for(int ii=0; ii<upTo; ii++) {
-                for(int jj=0;jj<lineCount[ii]; jj++) {
-                    // addToTree(head, &(storms[0]->events[ii]), ii, queries[2]);
-                    addToTree(head, &(storms[0]->events[ii]), ii, "state");
+            if(queries[1] == "all") {  // get all the years supplied from argv
+                for(int ii=0; ii<upTo; ii++) {
+                    for(int jj=0;jj<lineCount[ii]; jj++) {
+                        addToTree(head, &(storms[ii]->events[jj]), jj, queries[2]);
+                    }
                 }
             }
+            else {  // get a select year
+                int stormIndex = stoi(queries[1]) - startYear; // the index of the needed storm in storms
+                for(int jj=0;jj<lineCount[stormIndex]; jj++) {
+                    addToTree(head, &(storms[stormIndex]->events[jj]), jj, queries[2]);
+                }
+            }
+
             // find the matching events and print them
-            // cout << numberOfQueries << endl;
-            // cout << "Query:" << line << "\n\n";
-            //
+            cout << "Query:" << line << "\n\n";
             // findAndPrint(head, queries[3], queries[4], stoi(queries[1]), queries[2]);
         }
+        cout << "\n\n";
     }
     return 0;
 }

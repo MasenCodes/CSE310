@@ -5,8 +5,11 @@
       <paths name="ASU (1ba96810-e437-4728-a5bb-2d8c7c8eacc9)">
         <serverdata>
           <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/CSE310" local="$PROJECT_DIR$" />
           </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/project2/cmake-build-debug" />
+          </excludedPaths>
         </serverdata>
       </paths>
     </serverData>

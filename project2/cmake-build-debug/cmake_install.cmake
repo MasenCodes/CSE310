@@ -1,4 +1,4 @@
-# Install script for directory: /afs/asu.edu/users/m/r/l/mrlunt/CSE310Proj2
+# Install script for directory: /afs/asu.edu/users/m/r/l/mrlunt/CSE310/project2
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -38,7 +38,7 @@ ELSE(CMAKE_INSTALL_COMPONENT)
   SET(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 ENDIF(CMAKE_INSTALL_COMPONENT)
 
-FILE(WRITE "/afs/asu.edu/users/m/r/l/mrlunt/CSE310Proj2/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}" "")
+FILE(WRITE "/afs/asu.edu/users/m/r/l/mrlunt/CSE310/project2/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}" "")
 FOREACH(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  FILE(APPEND "/afs/asu.edu/users/m/r/l/mrlunt/CSE310Proj2/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
+  FILE(APPEND "/afs/asu.edu/users/m/r/l/mrlunt/CSE310/project2/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
 ENDFOREACH(file)
