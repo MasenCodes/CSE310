@@ -12,24 +12,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b18cb2b4-5320-4917-8097-1c4b0fe2a8ea" name="Changes" comment="fix">
-      <change afterPath="$PROJECT_DIR$/project2/test_query.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/CSE310.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CSE310.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+    <list default="true" id="b18cb2b4-5320-4917-8097-1c4b0fe2a8ea" name="Changes" comment="just do traversal">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/project2/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/project2/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/project2/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/project2/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/project2/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/project2/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/project2/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/cmake-build-debug/CMakeFiles/storm.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/project2/cmake-build-debug/CMakeFiles/storm.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/cmake-build-debug/CMakeFiles/storm.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/project2/cmake-build-debug/CMakeFiles/storm.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/cmake-build-debug/CMakeFiles/storm.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/project2/cmake-build-debug/CMakeFiles/storm.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/project2/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/project2/cmake-build-debug/cmake_install.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/cmake-build-debug/project2.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/project2/cmake-build-debug/project2.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project2/storm.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/project2/storm.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -79,9 +63,9 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunManager" selected="CMake Application.storm">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="decode.cpp" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="mergesort" REDIRECT_INPUT="true" REDIRECT_INPUT_PATH="$PROJECT_DIR$/ref_input/encoded_tongue-twisters.txt" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="project2" TARGET_NAME="decode.cpp" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="project2" RUN_TARGET_NAME="decode.cpp">
@@ -97,11 +81,6 @@
     <configuration name="storm" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="1950 3" REDIRECT_INPUT="true" REDIRECT_INPUT_PATH="$PROJECT_DIR$/project2/test_query.txt" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="project2" TARGET_NAME="storm" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="project2" RUN_TARGET_NAME="storm">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <list>
@@ -149,7 +128,10 @@
       <workItem from="1632684325595" duration="1750000" />
       <workItem from="1632699686575" duration="648000" />
       <workItem from="1633379942194" duration="302000" />
-      <workItem from="1634079649195" duration="4636000" />
+      <workItem from="1634079649195" duration="7181000" />
+      <workItem from="1634092595647" duration="2265000" />
+      <workItem from="1634174223892" duration="2423000" />
+      <workItem from="1634253193471" duration="12145000" />
     </task>
     <task id="LOCAL-00001" summary="added shift and read">
       <created>1630977554940</created>
@@ -249,7 +231,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634079680030</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="just do traversal">
+      <created>1634084589905</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1634084589905</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -282,7 +271,15 @@
     <MESSAGE value="This is my best working attempt so far" />
     <MESSAGE value="Only failing anne chapters" />
     <MESSAGE value="fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix" />
+    <MESSAGE value="just do traversal" />
+    <option name="LAST_COMMIT_MESSAGE" value="just do traversal" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="CMakeRunConfiguration">
+        <watch expression="head-&gt;right" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
