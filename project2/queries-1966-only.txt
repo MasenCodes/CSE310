@@ -1,0 +1,9 @@
+8
+range 1966 state "FLORIDA" "FLORIDA"
+range 1966 state "MISSISSIPPI" "MISSISSIPPI"
+range 1966 state "NORTH CAROLINA" "NORTH CAROLINA"
+range 1966 state "NORTH CAROLINA" "SOUTH DAKOTA"
+range 1966 state "O" "N"
+range 1966 state "OA" "OZ"
+range 1966 state "ARIZONA" "ARIZONA"
+range 1966 state "ALABAMA" "COLORADO"

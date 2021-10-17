@@ -1,0 +1,8 @@
+7
+range 1951 month_name "January" "January"
+range 1952 state "AA" "CZ"
+range all month_name "June" "November"
+range all state "ARIZONA" "NORTH CAROLINA"
+range 1953 month_name "April" "May"
+range 1950 state "PA" "PZ"
+range all state "WYOMING" WYOMING"

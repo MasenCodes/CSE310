@@ -50,25 +50,32 @@ int monthToInt(string monthName) {
     return -1;
 }
 
-void printEvent(storm_event* event) {
+void printEvent(storm_event* event, string field) {
     cout << '\n';
-    if (event->state != "?") {
-        cout << SPACE << "state: " << event->state << endl;
+    if (field == "state") {
+        if (event->state != "?") {
+            cout << SPACE << "State: " << event->state << endl;
+        }
+    }
+    else {
+        if (event->month_name != "?") {
+            cout << SPACE << "Month: " << event->month_name << endl;
+        }
     }
     if (event->event_id) {
-        cout << SPACE << "event_id: " << event->event_id << endl;
+        cout << SPACE << "Event ID: " << event->event_id << endl;
     }
     if (event->year) {
-        cout << SPACE << "year: " << event->year << endl;
+        cout << SPACE << "Year: " << event->year << endl;
     }
     if (event->event_type != "?") {
-        cout << SPACE << "event_type: " << event->event_type << endl;
+        cout << SPACE << "Event Type: " << event->event_type << endl;
     }
     if (event->cz_type != '?') {
-        cout << SPACE << "cz_type: " << event->cz_type << endl;
+        cout << SPACE << "CZ Type: " << event->cz_type << endl;
     }
     if (event->cz_name != "?") {
-        cout << SPACE << "cz_name: " << event->cz_name << endl;
+        cout << SPACE << "CZ Name: " << event->cz_name << endl;
     }
     cout << '\n';
 }
@@ -350,15 +357,14 @@ void addToStorm(storm_event* storm, string fullRow, fatality_event* fatalEvent= 
 
 bool lessThan(bst* p, storm_event* event, string field) {
     if(field == "state") {
-        if(strcmp(p->s, event->state) == -1) {
-            return true;
-        }
-        return false;
+        return p->s < event->state;
     }
     else if(field == "month_name") {
-        return monthToInt(p->s) < monthToInt(event->month_name);
+        return p->s < event->month_name;
     }
-    return false;
+    else {
+        return p->event_id < event->event_id;
+    }
 }
 
 bool equal(bst* p, storm_event* event, string field) {
@@ -366,7 +372,7 @@ bool equal(bst* p, storm_event* event, string field) {
         return p->s == event->state;
     }
     else if(field == "month_name") {
-        return monthToInt(p->s) == monthToInt(event->month_name);
+        return p->s == event->month_name;
     }
     return false;
 }
@@ -380,7 +386,7 @@ void findAndPrint(bst* head, string leftBound, string rightBound, string field, 
                 storm_event storm = storms[ii].events[head->event_index];
                 if(storm.event_id == head->event_id) {
                     if(storm.state >= leftBound and storm.state <= rightBound) {
-                        printEvent(&storm);
+                        printEvent(&storm, field);
                     }
                 }
             }
@@ -389,8 +395,9 @@ void findAndPrint(bst* head, string leftBound, string rightBound, string field, 
             for(int ii=0; ii<stormsLen; ii++) {
                 storm_event storm = storms[ii].events[head->event_index];
                 if(storm.event_id == head->event_id) {
-                    if(storm.month_name >= leftBound and storm.month_name <= rightBound) {
-                        printEvent(&storm);
+                    if(monthToInt(storm.month_name) >= monthToInt(leftBound) and
+                            monthToInt(storm.month_name) <= monthToInt(rightBound)) {
+                        printEvent(&storm, field);
                     }
                 }
             }
@@ -421,17 +428,17 @@ bst* insertNode(bst* p, storm_event* event, int eventIndex, string field) {
         return createNode(event, eventIndex, field);
     }
     if (equal(p, event, field)) { // compare by id
-        if (lessThan(p, event, field)) {
+        if (lessThan(p, event, "id")) {
             p->left = insertNode(p->left, event, eventIndex, field);
         }
-        else if (!lessThan(p, event, field)) {
+        else {
             p->right = insertNode(p->right, event, eventIndex, field);
         }
     }
     else if (lessThan(p, event, field)) {
         p->left = insertNode(p->left, event, eventIndex, field);
     }
-    else if (!lessThan(p, event, field)) {
+    else {
         p->right = insertNode(p->right, event, eventIndex, field);
     }
     return p;
@@ -474,32 +481,14 @@ int main(int argc, char * argv[]) {
             }
             detailsFile.close();
         }
-        /*
-        // build the tree for each query
-        bst* head = nullptr;
-        bool first = true;
-        for(int ii=0; ii<upTo; ii++) {
-            for(int jj=0;jj<lineCount[ii]; jj++) {
-                if(first) {
-                    head = insertNode(head, &(storms[ii].events[jj]), jj, "state");
-                    first = false;
-                }
-                else {
-                    insertNode(head, &(storms[ii].events[jj]), jj, "state");
-                }
-            }
-        }
-        findAndPrint(head, "ARIZONA", "TEXAS", "state", upTo, storms); */
-
 
         // handle range queries here
         string line;
         string queries[5];  // type = 0 | year = 1 | field = 2 | leftBound = 3 | rightBound = 4
         string numberOfQueries;
         getline(cin, numberOfQueries); // first line is always number
-        numberOfQueries = numberOfQueries.substr(0, numberOfQueries.length() - 1); // remove carriage return
 
-        cout << numberOfQueries << "\n\n"; // start the printing process
+        //cout << numberOfQueries << "\n\n"; // start the printing process
 
         // read all queries
         while(getline(cin, line)) {
@@ -548,10 +537,10 @@ int main(int argc, char * argv[]) {
             }
 
             // find the matching events and print them
-            cout << "Query: " << line << "\n\n";
+            //cout << "Query: " << line << "\n\n";
             findAndPrint(head, queries[3], queries[4], queries[2], upTo, storms);
+            //cout << '\n';
         }
-        cout << "\n";
     }
     return 0;
 }

@@ -12,8 +12,34 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b18cb2b4-5320-4917-8097-1c4b0fe2a8ea" name="Changes" comment="just do traversal">
+    <list default="true" id="b18cb2b4-5320-4917-8097-1c4b0fe2a8ea" name="Changes" comment="just fix comparisons">
+      <change afterPath="$PROJECT_DIR$/project2/details-1953.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project2/fatalities-1953.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project2/queries-1950-1953.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project2/queries-1950-only.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project2/queries-1966-only.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project2/queries-1996-only.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project2/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/project2/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project2/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/project2/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project2/cmake-build-debug/CMakeFiles/storm.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/project2/cmake-build-debug/CMakeFiles/storm.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project2/cmake-build-debug/CMakeFiles/storm.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/project2/cmake-build-debug/CMakeFiles/storm.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project2/cmake-build-debug/CMakeFiles/storm.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/project2/cmake-build-debug/CMakeFiles/storm.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project2/cmake-build-debug/csv_data/details-1950.csv" beforeDir="false" afterPath="$PROJECT_DIR$/project2/cmake-build-debug/csv_data/details-1950.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project2/cmake-build-debug/csv_data/details-1966.csv" beforeDir="false" afterPath="$PROJECT_DIR$/project2/cmake-build-debug/csv_data/details-1966.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project2/cmake-build-debug/csv_data/details-1996.csv" beforeDir="false" afterPath="$PROJECT_DIR$/project2/cmake-build-debug/csv_data/details-1996.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project2/cmake-build-debug/csv_data/fatalities-1996.csv" beforeDir="false" afterPath="$PROJECT_DIR$/project2/cmake-build-debug/csv_data/fatalities-1996.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project2/csv_data/details-1950.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project2/csv_data/details-1951.csv" beforeDir="false" afterPath="$PROJECT_DIR$/project2/details-1951.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project2/csv_data/details-1952.csv" beforeDir="false" afterPath="$PROJECT_DIR$/project2/details-1952.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project2/csv_data/details-1966.csv" beforeDir="false" afterPath="$PROJECT_DIR$/project2/details-1966.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project2/csv_data/details-1996.csv" beforeDir="false" afterPath="$PROJECT_DIR$/project2/details-1996.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project2/csv_data/fatalities-1950.csv" beforeDir="false" afterPath="$PROJECT_DIR$/project2/fatalities-1950.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project2/csv_data/fatalities-1951.csv" beforeDir="false" afterPath="$PROJECT_DIR$/project2/fatalities-1951.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project2/csv_data/fatalities-1952.csv" beforeDir="false" afterPath="$PROJECT_DIR$/project2/fatalities-1952.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project2/csv_data/fatalities-1966.csv" beforeDir="false" afterPath="$PROJECT_DIR$/project2/fatalities-1966.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project2/csv_data/fatalities-1996.csv" beforeDir="false" afterPath="$PROJECT_DIR$/project2/fatalities-1996.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project2/storm.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/project2/storm.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,10 +88,15 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\dev-reference\CSE310\project2" />
+    </key>
+  </component>
   <component name="RunManager" selected="CMake Application.storm">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
       </method>
     </configuration>
     <configuration name="decode.cpp" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="mergesort" REDIRECT_INPUT="true" REDIRECT_INPUT_PATH="$PROJECT_DIR$/ref_input/encoded_tongue-twisters.txt" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="project2" TARGET_NAME="decode.cpp" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="project2" RUN_TARGET_NAME="decode.cpp">
@@ -78,9 +109,14 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="storm" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="1950 3" REDIRECT_INPUT="true" REDIRECT_INPUT_PATH="$PROJECT_DIR$/project2/test_query.txt" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="project2" TARGET_NAME="storm" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="project2" RUN_TARGET_NAME="storm">
+    <configuration name="storm" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="1950 4" REDIRECT_INPUT="true" REDIRECT_INPUT_PATH="$PROJECT_DIR$/project2/queries-1950-1953.txt" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="project2" TARGET_NAME="storm" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="project2" RUN_TARGET_NAME="storm">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <list>
@@ -131,7 +167,8 @@
       <workItem from="1634079649195" duration="7181000" />
       <workItem from="1634092595647" duration="2265000" />
       <workItem from="1634174223892" duration="2423000" />
-      <workItem from="1634253193471" duration="12145000" />
+      <workItem from="1634253193471" duration="12218000" />
+      <workItem from="1634425801046" duration="6725000" />
     </task>
     <task id="LOCAL-00001" summary="added shift and read">
       <created>1630977554940</created>
@@ -238,7 +275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634084589905</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="just fix comparisons">
+      <created>1634266598787</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1634266598787</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -272,7 +316,8 @@
     <MESSAGE value="Only failing anne chapters" />
     <MESSAGE value="fix" />
     <MESSAGE value="just do traversal" />
-    <option name="LAST_COMMIT_MESSAGE" value="just do traversal" />
+    <MESSAGE value="just fix comparisons" />
+    <option name="LAST_COMMIT_MESSAGE" value="just fix comparisons" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

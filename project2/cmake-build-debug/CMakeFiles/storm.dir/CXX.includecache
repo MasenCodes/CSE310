@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/afs/asu.edu/users/m/r/l/mrlunt/CSE310Proj2/defns.h
+/afs/asu.edu/users/m/r/l/mrlunt/CSE310/project2/defns.h
 
-/afs/asu.edu/users/m/r/l/mrlunt/CSE310Proj2/storm.cpp
+/afs/asu.edu/users/m/r/l/mrlunt/CSE310/project2/storm.cpp
 defns.h
-/afs/asu.edu/users/m/r/l/mrlunt/CSE310Proj2/defns.h
+/afs/asu.edu/users/m/r/l/mrlunt/CSE310/project2/defns.h
 string
 -
 cstring
