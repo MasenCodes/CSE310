@@ -1,0 +1,1784 @@
+
+        Month: January
+        Event ID: 10009712
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: KANKAKEE
+
+
+        Month: January
+        Event ID: 10009711
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: MONTGOMERY
+
+
+        Month: January
+        Event ID: 10009710
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: MADISON
+
+
+        Month: January
+        Event ID: 10063616
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: IRON
+
+
+        Month: January
+        Event ID: 9981922
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: POLK
+
+
+        Month: January
+        Event ID: 10086808
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: VAN WERT
+
+
+        Month: January
+        Event ID: 10063615
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: ST. LOUIS
+
+
+        Month: January
+        Event ID: 10120401
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: BROOKS
+
+
+        Month: February
+        Event ID: 10126027
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: LAUDERDALE
+
+
+        Month: February
+        Event ID: 10126026
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: SHELBY
+
+
+        Month: February
+        Event ID: 10032627
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: CLAIBORNE
+
+
+        Month: February
+        Event ID: 10120402
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: BRAZORIA
+
+
+        Month: February
+        Event ID: 10032633
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: EAST CARROLL
+
+
+        Month: February
+        Event ID: 10032632
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: BIENVILLE
+
+
+        Month: February
+        Event ID: 10032631
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: WEBSTER
+
+
+        Month: February
+        Event ID: 10032630
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: NATCHITOCHES
+
+
+        Month: February
+        Event ID: 10032629
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: NATCHITOCHES
+
+
+        Month: February
+        Event ID: 10032628
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: BOSSIER
+
+
+        Month: February
+        Event ID: 10032626
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: CADDO
+
+
+        Month: February
+        Event ID: 10032625
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: SABINE
+
+
+        Month: February
+        Event ID: 10032624
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: DE SOTO
+
+
+        Month: February
+        Event ID: 10032623
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: DE SOTO
+
+
+        Month: February
+        Event ID: 10049525
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: UNION
+
+
+        Month: February
+        Event ID: 10049524
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: UNION
+
+
+        Month: February
+        Event ID: 9981924
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: UNION
+
+
+        Month: February
+        Event ID: 9981923
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: GRANT
+
+
+        Month: February
+        Event ID: 10120410
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: SHELBY
+
+
+        Month: February
+        Event ID: 10120409
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: SHELBY
+
+
+        Month: February
+        Event ID: 10120408
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: LIMESTONE
+
+
+        Month: February
+        Event ID: 10120407
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: ERATH
+
+
+        Month: February
+        Event ID: 10120406
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: BOWIE
+
+
+        Month: February
+        Event ID: 10120405
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: CASS
+
+
+        Month: February
+        Event ID: 10120404
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: SMITH
+
+
+        Month: February
+        Event ID: 10120403
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: HARRIS
+
+
+        Month: February
+        Event ID: 10096216
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: OKLAHOMA
+
+
+        Month: March
+        Event ID: 10032638
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: EAST FELICIANA
+
+
+        Month: March
+        Event ID: 10032637
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: EAST CARROLL
+
+
+        Month: March
+        Event ID: 10126028
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: WARREN
+
+
+        Month: March
+        Event ID: 10009713
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: MCLEAN
+
+
+        Month: March
+        Event ID: 10032636
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: ASCENSION
+
+
+        Month: March
+        Event ID: 10032635
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: JEFFERSON
+
+
+        Month: March
+        Event ID: 10032634
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: CALCASIEU
+
+
+        Month: March
+        Event ID: 9985754
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: ST. JOHNS
+
+
+        Month: March
+        Event ID: 9982999
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: PULASKI
+
+
+        Month: March
+        Event ID: 9982998
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: IZARD
+
+
+        Month: March
+        Event ID: 9983001
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: WOODRUFF
+
+
+        Month: March
+        Event ID: 9983000
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: PRAIRIE
+
+
+        Month: March
+        Event ID: 9981926
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: HOT SPRING
+
+
+        Month: March
+        Event ID: 10049526
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: LAUDERDALE
+
+
+        Month: March
+        Event ID: 10049530
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: HINDS
+
+
+        Month: March
+        Event ID: 10049529
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: HINDS
+
+
+        Month: March
+        Event ID: 10049528
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: ATTALA
+
+
+        Month: March
+        Event ID: 10049527
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: HUMPHREYS
+
+
+        Month: March
+        Event ID: 9981925
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: CLARK
+
+
+        Month: March
+        Event ID: 10049534
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: TISHOMINGO
+
+
+        Month: March
+        Event ID: 10049533
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: CLAY
+
+
+        Month: March
+        Event ID: 10049532
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: RANKIN
+
+
+        Month: March
+        Event ID: 10049531
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: RANKIN
+
+
+        Month: March
+        Event ID: 10096217
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: PITTSBURG
+
+
+        Month: April
+        Event ID: 10032639
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: ASCENSION
+
+
+        Month: April
+        Event ID: 9979207
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: MOBILE
+
+
+        Month: April
+        Event ID: 10117453
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: BERKELEY
+
+
+        Month: April
+        Event ID: 10027577
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: COFFEY
+
+
+        Month: April
+        Event ID: 9983003
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: MISSISSIPPI
+
+
+        Month: April
+        Event ID: 9979423
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: BALDWIN
+
+
+        Month: April
+        Event ID: 9983002
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: JACKSON
+
+
+        Month: April
+        Event ID: 10120411
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: CALLAHAN
+
+
+        Month: April
+        Event ID: 10049535
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: MARION
+
+
+        Month: April
+        Event ID: 10096224
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: COAL
+
+
+        Month: April
+        Event ID: 10096223
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: HUGHES
+
+
+        Month: April
+        Event ID: 10096221
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: KIOWA
+
+
+        Month: April
+        Event ID: 10096220
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: KIOWA
+
+
+        Month: April
+        Event ID: 10096219
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: TULSA
+
+
+        Month: April
+        Event ID: 10096218
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: LINCOLN
+
+
+        Month: April
+        Event ID: 10120412
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: COMANCHE
+
+
+        Month: April
+        Event ID: 10096222
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: WASHITA
+
+
+        Month: May
+        Event ID: 10032650
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: SABINE
+
+
+        Month: May
+        Event ID: 10032649
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: DE SOTO
+
+
+        Month: May
+        Event ID: 10032648
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: AVOYELLES
+
+
+        Month: May
+        Event ID: 10032647
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: CATAHOULA
+
+
+        Month: May
+        Event ID: 10032646
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: WINN
+
+
+        Month: May
+        Event ID: 10032645
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: GRANT
+
+
+        Month: May
+        Event ID: 10032644
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: CONCORDIA
+
+
+        Month: May
+        Event ID: 10032643
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: LA SALLE
+
+
+        Month: May
+        Event ID: 10032642
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: NATCHITOCHES
+
+
+        Month: May
+        Event ID: 10032641
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: WINN
+
+
+        Month: May
+        Event ID: 10032640
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: NATCHITOCHES
+
+
+        Month: May
+        Event ID: 10027595
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: RILEY
+
+
+        Month: May
+        Event ID: 10027594
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: COMANCHE
+
+
+        Month: May
+        Event ID: 10027593
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: PHILLIPS
+
+
+        Month: May
+        Event ID: 10027592
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: BUTLER
+
+
+        Month: May
+        Event ID: 10027591
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: CHASE
+
+
+        Month: May
+        Event ID: 10027590
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: JEWELL
+
+
+        Month: May
+        Event ID: 10027589
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: KINGMAN
+
+
+        Month: May
+        Event ID: 10027588
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: RILEY
+
+
+        Month: May
+        Event ID: 10027587
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: REPUBLIC
+
+
+        Month: May
+        Event ID: 10001430
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: WHITFIELD
+
+
+        Month: May
+        Event ID: 10027586
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: CLOUD
+
+
+        Month: May
+        Event ID: 10162813
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: UINTA
+
+
+        Month: May
+        Event ID: 10027585
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: OSBORNE
+
+
+        Month: May
+        Event ID: 10120417
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: DENTON
+
+
+        Month: May
+        Event ID: 10120416
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: DAWSON
+
+
+        Month: May
+        Event ID: 10027584
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: JEWELL
+
+
+        Month: May
+        Event ID: 10027583
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: MITCHELL
+
+
+        Month: May
+        Event ID: 10027582
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: BROWN
+
+
+        Month: May
+        Event ID: 10027581
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: JACKSON
+
+
+        Month: May
+        Event ID: 10027580
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: PAWNEE
+
+
+        Month: May
+        Event ID: 10027579
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: BARTON
+
+
+        Month: May
+        Event ID: 10027578
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: RUSH
+
+
+        Month: May
+        Event ID: 10017010
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: MONTGOMERY
+
+
+        Month: May
+        Event ID: 10017009
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: MILLS
+
+
+        Month: May
+        Event ID: 10110746
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: HUTCHINSON
+
+
+        Month: May
+        Event ID: 9985757
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: ORANGE
+
+
+        Month: May
+        Event ID: 9985756
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: ORANGE
+
+
+        Month: May
+        Event ID: 9985755
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: VOLUSIA
+
+
+        Month: May
+        Event ID: 10077690
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: PITT
+
+
+        Month: May
+        Event ID: 10077695
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: PITT
+
+
+        Month: May
+        Event ID: 10077694
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: UNION
+
+
+        Month: May
+        Event ID: 10077693
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: MONTGOMERY
+
+
+        Month: May
+        Event ID: 10077692
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: WAKE
+
+
+        Month: May
+        Event ID: 10077691
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: WAKE
+
+
+        Month: May
+        Event ID: 10073783
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: RED WILLOW
+
+
+        Month: May
+        Event ID: 10073782
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: NEMAHA
+
+
+        Month: May
+        Event ID: 10096236
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: MAYES
+
+
+        Month: May
+        Event ID: 10096235
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: WOODWARD
+
+
+        Month: May
+        Event ID: 10096234
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: CUSTER
+
+
+        Month: May
+        Event ID: 10096233
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: DEWEY
+
+
+        Month: May
+        Event ID: 10096232
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: BEAVER
+
+
+        Month: May
+        Event ID: 10096231
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: PONTOTOC
+
+
+        Month: May
+        Event ID: 10050383
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: ADAMS
+
+
+        Month: May
+        Event ID: 10050382
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: JEFFERSON
+
+
+        Month: May
+        Event ID: 10120415
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: KENDALL
+
+
+        Month: May
+        Event ID: 10120414
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: FORT BEND
+
+
+        Month: May
+        Event ID: 10120413
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: OCHILTREE
+
+
+        Month: May
+        Event ID: 10096230
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: KINGFISHER
+
+
+        Month: May
+        Event ID: 10096229
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: PAYNE
+
+
+        Month: May
+        Event ID: 10096228
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: ELLIS
+
+
+        Month: May
+        Event ID: 10096227
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: WOODWARD
+
+
+        Month: May
+        Event ID: 10096226
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: BECKHAM
+
+
+        Month: May
+        Event ID: 10096225
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: CUSTER
+
+
+        Month: June
+        Event ID: 10009714
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: CARROLL
+
+
+        Month: June
+        Event ID: 10028462
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: GRAHAM
+
+
+        Month: June
+        Event ID: 10028461
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: SEDGWICK
+
+
+        Month: June
+        Event ID: 10028460
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: WICHITA
+
+
+        Month: June
+        Event ID: 10146806
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: GREEN LAKE
+
+
+        Month: June
+        Event ID: 10146805
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: MARATHON
+
+
+        Month: June
+        Event ID: 10146804
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: ONEIDA
+
+
+        Month: June
+        Event ID: 10146803
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: CLARK
+
+
+        Month: June
+        Event ID: 10146802
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: PRICE
+
+
+        Month: June
+        Event ID: 10146801
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: RUSK
+
+
+        Month: June
+        Event ID: 10027597
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: MCPHERSON
+
+
+        Month: June
+        Event ID: 10027596
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: RICE
+
+
+        Month: June
+        Event ID: 10001433
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: LAMAR
+
+
+        Month: June
+        Event ID: 10001432
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: DE KALB
+
+
+        Month: June
+        Event ID: 10001431
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: CARROLL
+
+
+        Month: June
+        Event ID: 10162815
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: WESTON
+
+
+        Month: June
+        Event ID: 10162814
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: NIOBRARA
+
+
+        Month: June
+        Event ID: 10120420
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: HARTLEY
+
+
+        Month: June
+        Event ID: 10120419
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: AUSTIN
+
+
+        Month: June
+        Event ID: 10120418
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: WASHINGTON
+
+
+        Month: June
+        Event ID: 10089656
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: DIVIDE
+
+
+        Month: June
+        Event ID: 10089655
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: CASS
+
+
+        Month: June
+        Event ID: 10017011
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: STORY
+
+
+        Month: June
+        Event ID: 10052051
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: WILKIN
+
+
+        Month: June
+        Event ID: 10073784
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: KNOX
+
+
+        Month: June
+        Event ID: 10096237
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: KAY
+
+
+        Month: June
+        Event ID: 10063618
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: SHELBY
+
+
+        Month: June
+        Event ID: 10063617
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: PULASKI
+
+
+        Month: June
+        Event ID: 10050384
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: ATTALA
+
+
+        Month: June
+        Event ID: 10073785
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: NUCKOLLS
+
+
+        Month: July
+        Event ID: 10009715
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: LIVINGSTON
+
+
+        Month: July
+        Event ID: 10028674
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: MARSHALL
+
+
+        Month: July
+        Event ID: 10028673
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: SCOTT
+
+
+        Month: July
+        Event ID: 10028675
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: ALLEN
+
+
+        Month: July
+        Event ID: 10028464
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: DICKINSON
+
+
+        Month: July
+        Event ID: 10028463
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: RILEY
+
+
+        Month: July
+        Event ID: 9986149
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: FAIRFIELD
+
+
+        Month: July
+        Event ID: 10004028
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: ST. JOSEPH
+
+
+        Month: July
+        Event ID: 9991325
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: WELD
+
+
+        Month: July
+        Event ID: 10004030
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: ALLEN
+
+
+        Month: July
+        Event ID: 10004029
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: FOUNTAIN
+
+
+        Month: July
+        Event ID: 10086810
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: ALLEN
+
+
+        Month: July
+        Event ID: 10086809
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: VAN WERT
+
+
+        Month: July
+        Event ID: 10017012
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: BUCHANAN
+
+
+        Month: July
+        Event ID: 10077697
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: CABARRUS
+
+
+        Month: July
+        Event ID: 10077696
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: PITT
+
+
+        Month: July
+        Event ID: 9986148
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: MIDDLESEX
+
+
+        Month: July
+        Event ID: 10073786
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: BURT
+
+
+        Month: July
+        Event ID: 10063619
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: MORGAN
+
+
+        Month: July
+        Event ID: 10080563
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: QUAY
+
+
+        Month: July
+        Event ID: 10104929
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: CRAWFORD
+
+
+        Month: July
+        Event ID: 10104928
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: DAUPHIN
+
+
+        Month: July
+        Event ID: 10104927
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: LEHIGH
+
+
+        Month: August
+        Event ID: 10028676
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: RAWLINS
+
+
+        Month: August
+        Event ID: 10028679
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: HASKELL
+
+
+        Month: August
+        Event ID: 10028678
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: GOVE
+
+
+        Month: August
+        Event ID: 10028677
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: FINNEY
+
+
+        Month: August
+        Event ID: 10147653
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: WOOD
+
+
+        Month: August
+        Event ID: 9991327
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: SEDGWICK
+
+
+        Month: August
+        Event ID: 9991326
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: SEDGWICK
+
+
+        Month: August
+        Event ID: 10063620
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: GREENE
+
+
+        Month: August
+        Event ID: 10038920
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: KENT
+
+
+        Month: August
+        Event ID: 9983004
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: ARKANSAS
+
+
+        Month: August
+        Event ID: 9985759
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: JACKSON
+
+
+        Month: August
+        Event ID: 9985758
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: FRANKLIN
+
+
+        Month: August
+        Event ID: 10080564
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: SOCORRO
+
+
+        Month: August
+        Event ID: 10104930
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: BUCKS
+
+
+        Month: September
+        Event ID: 10073787
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: LANCASTER
+
+
+        Month: September
+        Event ID: 10099491
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: PITTSBURG
+
+
+        Month: September
+        Event ID: 10099490
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: HUGHES
+
+
+        Month: October
+        Event ID: 10077698
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: COLUMBUS
+
+
+        Month: October
+        Event ID: 10099492
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: CIMARRON
+
+
+        Month: November
+        Event ID: 10035922
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: SCOTT
+
+
+        Month: November
+        Event ID: 10035921
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: MUHLENBERG
+
+
+        Month: November
+        Event ID: 10047275
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: NEWTON
+
+
+        Month: November
+        Event ID: 10104932
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: BERKS
+
+
+        Month: November
+        Event ID: 10104931
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: LANCASTER
+
+
+        Month: December
+        Event ID: 10009720
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: RANDOLPH
+
+
+        Month: December
+        Event ID: 10009719
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: BOND
+
+
+        Month: December
+        Event ID: 10009718
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: MADISON
+
+
+        Month: December
+        Event ID: 10009717
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: MACOUPIN
+
+
+        Month: December
+        Event ID: 10009716
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: MADISON
+
+
+        Month: December
+        Event ID: 9983005
+        Year: 1950
+        Event Type: Tornado
+        CZ Type: C
+        CZ Name: IZARD
+

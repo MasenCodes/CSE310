@@ -10,45 +10,6 @@ using namespace std;
 
 string SPACE = "        ";
 
-int monthToInt(string monthName) {
-    if(monthName == "January") {
-        return 1;
-    }
-    else if(monthName == "February") {
-        return 2;
-    }
-    else if(monthName == "March") {
-        return 3;
-    }
-    else if(monthName == "April") {
-        return 4;
-    }
-    else if(monthName == "May") {
-        return 5;
-    }
-    else if(monthName == "June") {
-        return 6;
-    }
-    else if(monthName == "July") {
-        return 7;
-    }
-    else if(monthName == "August") {
-        return 8;
-    }
-    else if(monthName == "September") {
-        return 9;
-    }
-    else if(monthName == "October") {
-        return 10;
-    }
-    else if(monthName == "November") {
-        return 11;
-    }
-    else if(monthName == "December") {
-        return 12;
-    }
-    return -1;
-}
 
 void printEvent(storm_event* event, string field) {
     cout << '\n';
@@ -110,6 +71,9 @@ int convert(string val) {
     }
     else if(val[len - 1] == 'm' or val[len - 1] == 'M') {
         return int(1000000 * std::stof(val.substr(2, len - 3)));
+    }
+    else if(val[len - 1] == 'b' or val[len - 1] == 'B') {
+        return int(1000000000 * std::stof(val.substr(2, len - 3)));
     }
     // default -1
     else if(len == 2){
@@ -362,9 +326,7 @@ bool lessThan(bst* p, storm_event* event, string field) {
     else if(field == "month_name") {
         return p->s < event->month_name;
     }
-    else {
-        return p->event_id < event->event_id;
-    }
+    return false;
 }
 
 bool equal(bst* p, storm_event* event, string field) {
@@ -395,8 +357,7 @@ void findAndPrint(bst* head, string leftBound, string rightBound, string field, 
             for(int ii=0; ii<stormsLen; ii++) {
                 storm_event storm = storms[ii].events[head->event_index];
                 if(storm.event_id == head->event_id) {
-                    if(monthToInt(storm.month_name) >= monthToInt(leftBound) and
-                            monthToInt(storm.month_name) <= monthToInt(rightBound)) {
+                    if(storm.month_name >= leftBound and storm.month_name <= rightBound) {
                         printEvent(&storm, field);
                     }
                 }
@@ -428,7 +389,7 @@ bst* insertNode(bst* p, storm_event* event, int eventIndex, string field) {
         return createNode(event, eventIndex, field);
     }
     if (equal(p, event, field)) { // compare by id
-        if (lessThan(p, event, "id")) {
+        if (p->event_id < event->event_id) {
             p->left = insertNode(p->left, event, eventIndex, field);
         }
         else {
@@ -442,6 +403,16 @@ bst* insertNode(bst* p, storm_event* event, int eventIndex, string field) {
         p->right = insertNode(p->right, event, eventIndex, field);
     }
     return p;
+}
+
+void deleteTree(bst*& head) {
+    if(head == nullptr) {
+        return;
+    }
+    deleteTree(head->left);
+    deleteTree(head->right);
+    delete head;
+    head = nullptr;
 }
 
 int main(int argc, char * argv[]) {
@@ -459,8 +430,8 @@ int main(int argc, char * argv[]) {
         int lineCount[upTo];
 
         // create struct array and initialize from files
-        auto* storms = new annual_storms[upTo];
-        for(int ii=0; ii<upTo; ii++) {
+        auto *storms = new annual_storms[upTo];
+        for (int ii = 0; ii < upTo; ii++) {
             // open file and prepare variables
             details_file = "details-" + to_string((startYear + ii)) + ".csv";
             lineCount[ii] = numberOfLines(details_file) - 1;
@@ -473,10 +444,9 @@ int main(int argc, char * argv[]) {
 
             // get each line of the file
             int index = 0;
-            while(getline(detailsFile, detail_row)) {
+            while (getline(detailsFile, detail_row)) {
                 // add the event
                 addToStorm(&(storms[ii].events[index]), detail_row);
-
                 index++;
             }
             detailsFile.close();
@@ -488,58 +458,57 @@ int main(int argc, char * argv[]) {
         string numberOfQueries;
         getline(cin, numberOfQueries); // first line is always number
 
-        //cout << numberOfQueries << "\n\n"; // start the printing process
+        cout << numberOfQueries << "\n\n"; // start the printing process
 
+        // build the tree for each query
+        bst *head = nullptr;
         // read all queries
-        while(getline(cin, line)) {
+        while (getline(cin, line)) {
             // load the line
             int queryIndex = 0;
             string temp;
-            for(char c: line) {
-                if(c == ' ') {
+            for (char c: line) {
+                if (c == ' ') {
                     queries[queryIndex] = temp;
                     queryIndex++;
                     temp = "";
-                }
-                else if(c != '\"' and c != '\r') {
+                } else if (c != '\"' and c != '\r') {
                     temp += c;
                 }
             }
             queries[4] = temp;
 
-            // build the tree for each query
-            bst* head = nullptr;
             bool first = true;
-            if(queries[1] == "all") {  // get all the years supplied from argv
-                for(int ii=0; ii<upTo; ii++) {
-                    for(int jj=0;jj<lineCount[ii]; jj++) {
-                        if(first) {
+            if (queries[1] == "all") {  // get all the years supplied from argv
+                for (int ii = 0; ii < upTo; ii++) {
+                    for (int jj = 0; jj < lineCount[ii]; jj++) {
+                        if (first) {
                             head = insertNode(head, &(storms[ii].events[jj]), jj, queries[2]);
                             first = false;
-                        }
-                        else {
+                        } else {
                             insertNode(head, &(storms[ii].events[jj]), jj, queries[2]);
                         }
                     }
                 }
-            }
-            else {  // get a select year
+            } else {  // get a select year
                 int stormIndex = stoi(queries[1]) - startYear; // the index of the needed storm in storms
-                for(int jj=0;jj<lineCount[stormIndex]; jj++) {
-                    if(first) {
+                for (int jj = 0; jj < lineCount[stormIndex]; jj++) {
+                    if (first) {
                         head = insertNode(head, &(storms[stormIndex].events[jj]), jj, queries[2]);
                         first = false;
-                    }
-                    else {
+                    } else {
                         insertNode(head, &(storms[stormIndex].events[jj]), jj, queries[2]);
                     }
                 }
             }
 
             // find the matching events and print them
-            //cout << "Query: " << line << "\n\n";
+            cout << "Query: " << line << "\n\n";
             findAndPrint(head, queries[3], queries[4], queries[2], upTo, storms);
-            //cout << '\n';
+            cout << '\n';
+            deleteTree(head);
+            delete head;
+            head = nullptr;
         }
     }
     return 0;
