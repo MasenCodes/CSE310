@@ -20,7 +20,7 @@ void printEvent(storm_event* event, string field) {
     }
     else {
         if (event->month_name != "?") {
-            cout << SPACE << "Month: " << event->month_name << endl;
+            cout << SPACE << "Month Name: " << event->month_name << endl;
         }
     }
     if (event->event_id) {
@@ -33,12 +33,11 @@ void printEvent(storm_event* event, string field) {
         cout << SPACE << "Event Type: " << event->event_type << endl;
     }
     if (event->cz_type != '?') {
-        cout << SPACE << "CZ Type: " << event->cz_type << endl;
+        cout << SPACE << "County/Zone Type: " << event->cz_type << endl;
     }
     if (event->cz_name != "?") {
-        cout << SPACE << "CZ Name: " << event->cz_name << endl;
+        cout << SPACE << "County/Zone Name: " << event->cz_name << endl;
     }
-    cout << '\n';
 }
 
 void printFatality(fatality_event* fatality) {
@@ -321,22 +320,33 @@ void addToStorm(storm_event* storm, string fullRow, fatality_event* fatalEvent= 
 
 bool lessThan(bst* p, storm_event* event, string field) {
     if(field == "state") {
-        return p->s < event->state;
+        if (strcmp(p->s, event->state) > 0) {
+            //cout << p->s << " is less than " << event->state << endl;
+            return true;
+        }
+        return false;
     }
     else if(field == "month_name") {
-        return p->s < event->month_name;
+        if (strcmp(p->s, event->month_name) > 0) {
+            return true;
+        }
+        return false;
     }
-    return false;
 }
 
 bool equal(bst* p, storm_event* event, string field) {
     if(field == "state") {
-        return p->s == event->state;
+        if(strcmp(p->s, event->state) == 0) {
+            return true;
+        }
+        return false;
     }
     else if(field == "month_name") {
-        return p->s == event->month_name;
+        if(strcmp(p->s, event->month_name) == 0) {
+            return true;
+        }
+        return false;
     }
-    return false;
 }
 
 void findAndPrint(bst* head, string leftBound, string rightBound, string field, int stormsLen, annual_storms storms[]) {
@@ -389,7 +399,7 @@ bst* insertNode(bst* p, storm_event* event, int eventIndex, string field) {
         return createNode(event, eventIndex, field);
     }
     if (equal(p, event, field)) { // compare by id
-        if (p->event_id < event->event_id) {
+        if (p->event_id > event->event_id) {
             p->left = insertNode(p->left, event, eventIndex, field);
         }
         else {
@@ -458,7 +468,7 @@ int main(int argc, char * argv[]) {
         string numberOfQueries;
         getline(cin, numberOfQueries); // first line is always number
 
-        cout << numberOfQueries << "\n\n"; // start the printing process
+        cout << numberOfQueries << '\n'; // start the printing process
 
         // build the tree for each query
         bst *head = nullptr;
@@ -466,14 +476,23 @@ int main(int argc, char * argv[]) {
         while (getline(cin, line)) {
             // load the line
             int queryIndex = 0;
+            bool inPar = false;
             string temp;
             for (char c: line) {
-                if (c == ' ') {
+                if (c == ' ' and not inPar) {  // this is breaking 1966
                     queries[queryIndex] = temp;
                     queryIndex++;
                     temp = "";
                 } else if (c != '\"' and c != '\r') {
                     temp += c;
+                }
+                else if (c == '\"') {
+                    if(not inPar) {
+                        inPar = true;
+                    }
+                    else {
+                        inPar = false;
+                    }
                 }
             }
             queries[4] = temp;
@@ -503,13 +522,15 @@ int main(int argc, char * argv[]) {
             }
 
             // find the matching events and print them
-            cout << "Query: " << line << "\n\n";
+            cout << "\n";
+            cout << "Query:" << line << "\n\n";
             findAndPrint(head, queries[3], queries[4], queries[2], upTo, storms);
-            cout << '\n';
+            cout << "\n";
             deleteTree(head);
             delete head;
             head = nullptr;
         }
+        cout << "\n\n";
     }
     return 0;
 }

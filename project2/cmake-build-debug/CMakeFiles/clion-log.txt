@@ -1,4 +1,4 @@
-/usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /afs/asu.edu/users/m/r/l/mrlunt/CSE310/project2
--- Configuring done
--- Generating done
--- Build files have been written to: /afs/asu.edu/users/m/r/l/mrlunt/CSE310/project2/cmake-build-debug
+CMake executable not found: /usr/bin/cmake Configure Disable profile
+
+Cannot get compiler information:
+	Unable to create a temporary file
