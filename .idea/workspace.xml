@@ -12,10 +12,15 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b18cb2b4-5320-4917-8097-1c4b0fe2a8ea" name="Changes" comment="fix comparisons and seg fault on large files">
+    <list default="true" id="b18cb2b4-5320-4917-8097-1c4b0fe2a8ea" name="Changes" comment="WORKINGGGGG!">
+      <change afterPath="$PROJECT_DIR$/project2/test_output/OP_Lex_queries-1950-1953.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project2/test_output/OP_Lex_queries-1950-only.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project2/test_output/OP_Lex_queries-1966-only.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project2/test_output/OP_Lex_queries-1996-only.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project2/tester.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project2/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/project2/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/output-1950-only.txt" beforeDir="false" afterPath="$PROJECT_DIR$/project2/output-1950-only.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project2/defns.h" beforeDir="false" afterPath="$PROJECT_DIR$/project2/defns.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project2/storm.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/project2/storm.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,9 +78,9 @@
     </key>
   </component>
   <component name="RunManager" selected="CMake Application.storm">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="decode.cpp" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="mergesort" REDIRECT_INPUT="true" REDIRECT_INPUT_PATH="$PROJECT_DIR$/ref_input/encoded_tongue-twisters.txt" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="project2" TARGET_NAME="decode.cpp" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="project2" RUN_TARGET_NAME="decode.cpp">
@@ -149,7 +154,12 @@
       <workItem from="1634253193471" duration="12218000" />
       <workItem from="1634425801046" duration="7019000" />
       <workItem from="1634505015509" duration="6651000" />
-      <workItem from="1634580201097" duration="7710000" />
+      <workItem from="1634580201097" duration="7993000" />
+      <workItem from="1634667958963" duration="1618000" />
+      <workItem from="1634679528833" duration="7569000" />
+      <workItem from="1634760723528" duration="11130000" />
+      <workItem from="1634864458243" duration="749000" />
+      <workItem from="1635296021215" duration="3339000" />
     </task>
     <task id="LOCAL-00001" summary="added shift and read">
       <created>1630977554940</created>
@@ -277,7 +287,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634511713704</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="WORKINGGGGG!">
+      <created>1634612643664</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1634612643664</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -314,7 +331,8 @@
     <MESSAGE value="just fix comparisons" />
     <MESSAGE value="still need to fix comparisons, event ID is not working" />
     <MESSAGE value="fix comparisons and seg fault on large files" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix comparisons and seg fault on large files" />
+    <MESSAGE value="WORKINGGGGG!" />
+    <option name="LAST_COMMIT_MESSAGE" value="WORKINGGGGG!" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

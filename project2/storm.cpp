@@ -9,17 +9,18 @@
 using namespace std;
 
 string SPACE = "        ";
+int HASH_TABLE_SIZE = 2293;
 
 
 void printEvent(storm_event* event, string field) {
     cout << '\n';
     if (field == "state") {
-        if (event->state != "?") {
+        if (strcmp(event->state, "?") != 0) {
             cout << SPACE << "State: " << event->state << endl;
         }
     }
     else {
-        if (event->month_name != "?") {
+        if (strcmp(event->month_name, "?") != 0) {
             cout << SPACE << "Month Name: " << event->month_name << endl;
         }
     }
@@ -29,14 +30,17 @@ void printEvent(storm_event* event, string field) {
     if (event->year) {
         cout << SPACE << "Year: " << event->year << endl;
     }
-    if (event->event_type != "?") {
+    if (strcmp(event->event_type, "?") != 0) {
         cout << SPACE << "Event Type: " << event->event_type << endl;
     }
     if (event->cz_type != '?') {
         cout << SPACE << "County/Zone Type: " << event->cz_type << endl;
     }
-    if (event->cz_name != "?") {
+    if (event->cz_name[0] != '?') {
         cout << SPACE << "County/Zone Name: " << event->cz_name << endl;
+    }
+    else {
+        cout << SPACE << "County/Zone Name: " << endl;
     }
 }
 
@@ -181,20 +185,12 @@ void addToStorm(storm_event* storm, string fullRow, fatality_event* fatalEvent= 
 
     // fixing the bad input we were given
     int len = fullRow.length();
-    string properRow;
-    if(fullRow.at(len - 1) == '\r') {
-        properRow = fullRow.substr(0, fullRow.length() - 1); // remove \r
-    }
-    else {
-        properRow = fullRow;
-    }
-
     // -1 and ? are defaults
     storm->f = fatalEvent;
     int loopIndex = 0;
     int charIndex = 0;
     string data = "-1";
-    for(char c : properRow) {
+    for(char c : fullRow) {
         if(loopIndex == 1) {
             if(c != ',') {
                 if(charIndex < 19) {
@@ -209,6 +205,10 @@ void addToStorm(storm_event* storm, string fullRow, fatality_event* fatalEvent= 
             else {
                 if(!charIndex) {
                     storm->state[0] = '?';
+                    storm->state[1] = '\0';
+                }
+                else if (charIndex <= 19) {
+                    storm->state[charIndex] = '\0';
                 }
                 loopIndex++;
                 charIndex = 0;
@@ -228,6 +228,10 @@ void addToStorm(storm_event* storm, string fullRow, fatality_event* fatalEvent= 
             else {
                 if(!charIndex) {
                     storm->month_name[0] = '?';
+                    storm->month_name[1] = '\0';
+                }
+                else if (charIndex <= 14) {
+                    storm->month_name[charIndex] = '\0';
                 }
                 loopIndex++;
                 charIndex = 0;
@@ -247,6 +251,10 @@ void addToStorm(storm_event* storm, string fullRow, fatality_event* fatalEvent= 
             else {
                 if(!charIndex) {
                     storm->event_type[0] = '?';
+                    storm->event_type[1] = '\0';
+                }
+                else if (charIndex <= 29) {
+                    storm->event_type[charIndex] = '\0';
                 }
                 loopIndex++;
                 charIndex = 0;
@@ -280,6 +288,10 @@ void addToStorm(storm_event* storm, string fullRow, fatality_event* fatalEvent= 
             else {
                 if(!charIndex) {
                     storm->cz_name[0] = '?';
+                    storm->cz_name[1] = '\0';
+                }
+                else if (charIndex <= 34) {
+                    storm->cz_name[charIndex] = '\0';
                 }
                 loopIndex++;
                 charIndex = 0;
@@ -318,6 +330,7 @@ void addToStorm(storm_event* storm, string fullRow, fatality_event* fatalEvent= 
     storm->damage_crops = convert(data);
 }
 
+// ------------------------------ BST Algorithms -------------------------------------
 bool lessThan(bst* p, storm_event* event, string field) {
     if(field == "state") {
         if (strcmp(p->s, event->state) > 0) {
@@ -349,16 +362,17 @@ bool equal(bst* p, storm_event* event, string field) {
     }
 }
 
-void findAndPrint(bst* head, string leftBound, string rightBound, string field, int stormsLen, annual_storms storms[]) {
+void findAndPrint(bst* head, string leftBound, string rightBound, string field, int stormsLen, annual_storms storms[], int* count) {
     // traverse the tree with the given field for the query and print out matching results
     if(head != nullptr) {
-        findAndPrint(head->left, leftBound, rightBound, field, stormsLen, storms);
+        findAndPrint(head->left, leftBound, rightBound, field, stormsLen, storms, count);
         if(field == "state") {
             for(int ii=0; ii<stormsLen; ii++) {
                 storm_event storm = storms[ii].events[head->event_index];
                 if(storm.event_id == head->event_id) {
                     if(storm.state >= leftBound and storm.state <= rightBound) {
                         printEvent(&storm, field);
+                        (*count)++;
                     }
                 }
             }
@@ -369,11 +383,12 @@ void findAndPrint(bst* head, string leftBound, string rightBound, string field, 
                 if(storm.event_id == head->event_id) {
                     if(storm.month_name >= leftBound and storm.month_name <= rightBound) {
                         printEvent(&storm, field);
+                        (*count)++;
                     }
                 }
             }
         }
-        findAndPrint(head->right, leftBound, rightBound, field, stormsLen, storms);
+        findAndPrint(head->right, leftBound, rightBound, field, stormsLen, storms, count);
     }
 }
 
@@ -415,16 +430,51 @@ bst* insertNode(bst* p, storm_event* event, int eventIndex, string field) {
     return p;
 }
 
-void deleteTree(bst*& head) {
+void deleteTree(bst* head) {
     if(head == nullptr) {
         return;
     }
     deleteTree(head->left);
     deleteTree(head->right);
     delete head;
-    head = nullptr;
+}
+// ------------------------------ BST Algorithms -------------------------------------
+
+// ----------------------------- Heap Algorithms -------------------------------------
+void swap(heap_entry* a, heap_entry* b) {
+
+}
+void max_heapify(heap_entry* h, int index, int size) {
+
+}
+// ----------------------------- Heap Algorithms -------------------------------------
+
+// ----------------------------- Hash Algorithms -------------------------------------
+int hashID(int event_id) {
+    return event_id % HASH_TABLE_SIZE;
 }
 
+hash_table_entry* convertFromEvent(storm_event* event, int index) {
+    auto* entry = new hash_table_entry;
+    entry->event_id = event->event_id;
+    entry->event_index = index;
+    entry->year = event->year;
+    return entry;
+}
+
+void insertEntry(hash_table_entry* table[], hash_table_entry* entry) {
+    int key = hashID(entry->event_id);
+    if(table[key]->next == nullptr) {
+        table[key]->next = entry;
+    }
+    else {
+        hash_table_entry* temp = table[key]->next;
+        table[key]->next = entry;
+        entry->next = temp;
+    }
+}
+
+// ----------------------------- Hash Algorithms -------------------------------------
 int main(int argc, char * argv[]) {
     if (argc > 1) {
         // collect year bounds and create data to them
@@ -432,22 +482,29 @@ int main(int argc, char * argv[]) {
         int upTo = atoi(argv[2]);
 
         // for creating memory of the csv files
-        string detail_row;
-        string fatal_row;
-        fstream detailsFile;
-        fstream fatalitiesFile;
-        string details_file;
         int lineCount[upTo];
 
         // create struct array and initialize from files
-        auto *storms = new annual_storms[upTo];
+        auto* storms = new annual_storms[upTo];
+        auto* table = new hash_table_entry[HASH_TABLE_SIZE];
         for (int ii = 0; ii < upTo; ii++) {
+            string detail_row;
+            fstream detailsFile;
+            string details_file;
             // open file and prepare variables
-            details_file = "details-" + to_string((startYear + ii)) + ".csv";
-            lineCount[ii] = numberOfLines(details_file) - 1;
-            detailsFile.open(details_file, fstream::in);
+            details_file = "details-" + to_string(startYear + ii) + ".csv";
+            //lineCount[ii] = numberOfLines(details_file) - 1;
+            detailsFile.open(details_file);
             getline(detailsFile, detail_row); // throw away first line
-
+            string temp;
+            int count = 0;
+            while(getline(detailsFile, temp)) {
+                count++;
+            }
+            lineCount[ii] = count;
+            detailsFile.clear();
+            detailsFile.seekg(0);
+            getline(detailsFile, detail_row); // throw away first line
             // make annual storm
             storms[ii].year = startYear + ii;
             storms[ii].events = new storm_event[lineCount[ii]];
@@ -457,8 +514,10 @@ int main(int argc, char * argv[]) {
             while (getline(detailsFile, detail_row)) {
                 // add the event
                 addToStorm(&(storms[ii].events[index]), detail_row);
+                insertEntry(&table, convertFromEvent(&(storms[ii].events[index]), index));
                 index++;
             }
+            //detailsFile.clear();
             detailsFile.close();
         }
 
@@ -524,10 +583,15 @@ int main(int argc, char * argv[]) {
             // find the matching events and print them
             cout << "\n";
             cout << "Query:" << line << "\n\n";
-            findAndPrint(head, queries[3], queries[4], queries[2], upTo, storms);
+            int check = 0;
+            findAndPrint(head, queries[3], queries[4], queries[2], upTo, storms, &check);
+            if (check == 0) {
+                cout << "\n";
+                cout << SPACE << "No storm events found for the given range";
+                cout << '\n';
+            }
             cout << "\n";
             deleteTree(head);
-            delete head;
             head = nullptr;
         }
         cout << "\n\n";

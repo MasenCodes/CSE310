@@ -1,0 +1,1612 @@
+12
+
+Query:range 1950 month_name "January" "January"
+
+
+        Month Name: January
+        Event ID: 9981922
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: POLK
+
+        Month Name: January
+        Event ID: 10009710
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: MADISON
+
+        Month Name: January
+        Event ID: 10009711
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: MONTGOMERY
+
+        Month Name: January
+        Event ID: 10009712
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: KANKAKEE
+
+        Month Name: January
+        Event ID: 10063615
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: ST. LOUIS
+
+        Month Name: January
+        Event ID: 10063616
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: IRON
+
+        Month Name: January
+        Event ID: 10086808
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: VAN WERT
+
+        Month Name: January
+        Event ID: 10120401
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: BROOKS
+
+
+Query:range 1950 month_name "February" "February"
+
+
+        Month Name: February
+        Event ID: 9981923
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: GRANT
+
+        Month Name: February
+        Event ID: 9981924
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: UNION
+
+        Month Name: February
+        Event ID: 10032623
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: DE SOTO
+
+        Month Name: February
+        Event ID: 10032624
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: DE SOTO
+
+        Month Name: February
+        Event ID: 10032625
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: SABINE
+
+        Month Name: February
+        Event ID: 10032626
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: CADDO
+
+        Month Name: February
+        Event ID: 10032627
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: CLAIBORNE
+
+        Month Name: February
+        Event ID: 10032628
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: BOSSIER
+
+        Month Name: February
+        Event ID: 10032629
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: NATCHITOCHES
+
+        Month Name: February
+        Event ID: 10032630
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: NATCHITOCHES
+
+        Month Name: February
+        Event ID: 10032631
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: WEBSTER
+
+        Month Name: February
+        Event ID: 10032632
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: BIENVILLE
+
+        Month Name: February
+        Event ID: 10032633
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: EAST CARROLL
+
+        Month Name: February
+        Event ID: 10049524
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: UNION
+
+        Month Name: February
+        Event ID: 10049525
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: UNION
+
+        Month Name: February
+        Event ID: 10096216
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: OKLAHOMA
+
+        Month Name: February
+        Event ID: 10120402
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: BRAZORIA
+
+        Month Name: February
+        Event ID: 10120403
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: HARRIS
+
+        Month Name: February
+        Event ID: 10120404
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: SMITH
+
+        Month Name: February
+        Event ID: 10120405
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: CASS
+
+        Month Name: February
+        Event ID: 10120406
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: BOWIE
+
+        Month Name: February
+        Event ID: 10120407
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: ERATH
+
+        Month Name: February
+        Event ID: 10120408
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: LIMESTONE
+
+        Month Name: February
+        Event ID: 10120409
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: SHELBY
+
+        Month Name: February
+        Event ID: 10120410
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: SHELBY
+
+        Month Name: February
+        Event ID: 10126026
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: SHELBY
+
+        Month Name: February
+        Event ID: 10126027
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: LAUDERDALE
+
+
+Query:range 1950 month_name "March" "March"
+
+
+        Month Name: March
+        Event ID: 9981925
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: CLARK
+
+        Month Name: March
+        Event ID: 9981926
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: HOT SPRING
+
+        Month Name: March
+        Event ID: 9982998
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: IZARD
+
+        Month Name: March
+        Event ID: 9982999
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: PULASKI
+
+        Month Name: March
+        Event ID: 9983000
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: PRAIRIE
+
+        Month Name: March
+        Event ID: 9983001
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: WOODRUFF
+
+        Month Name: March
+        Event ID: 9985754
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: ST. JOHNS
+
+        Month Name: March
+        Event ID: 10009713
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: MCLEAN
+
+        Month Name: March
+        Event ID: 10032634
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: CALCASIEU
+
+        Month Name: March
+        Event ID: 10032635
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: JEFFERSON
+
+        Month Name: March
+        Event ID: 10032636
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: ASCENSION
+
+        Month Name: March
+        Event ID: 10032637
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: EAST CARROLL
+
+        Month Name: March
+        Event ID: 10032638
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: EAST FELICIANA
+
+        Month Name: March
+        Event ID: 10049526
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: LAUDERDALE
+
+        Month Name: March
+        Event ID: 10049527
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: HUMPHREYS
+
+        Month Name: March
+        Event ID: 10049528
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: ATTALA
+
+        Month Name: March
+        Event ID: 10049529
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: HINDS
+
+        Month Name: March
+        Event ID: 10049530
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: HINDS
+
+        Month Name: March
+        Event ID: 10049531
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: RANKIN
+
+        Month Name: March
+        Event ID: 10049532
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: RANKIN
+
+        Month Name: March
+        Event ID: 10049533
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: CLAY
+
+        Month Name: March
+        Event ID: 10049534
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: TISHOMINGO
+
+        Month Name: March
+        Event ID: 10096217
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: PITTSBURG
+
+        Month Name: March
+        Event ID: 10126028
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: WARREN
+
+
+Query:range 1950 month_name "April" "April"
+
+
+        Month Name: April
+        Event ID: 9979207
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: MOBILE
+
+        Month Name: April
+        Event ID: 9979423
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: BALDWIN
+
+        Month Name: April
+        Event ID: 9983002
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: JACKSON
+
+        Month Name: April
+        Event ID: 9983003
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: MISSISSIPPI
+
+        Month Name: April
+        Event ID: 10027577
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: COFFEY
+
+        Month Name: April
+        Event ID: 10032639
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: ASCENSION
+
+        Month Name: April
+        Event ID: 10049535
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: MARION
+
+        Month Name: April
+        Event ID: 10096218
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: LINCOLN
+
+        Month Name: April
+        Event ID: 10096219
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: TULSA
+
+        Month Name: April
+        Event ID: 10096220
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: KIOWA
+
+        Month Name: April
+        Event ID: 10096221
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: KIOWA
+
+        Month Name: April
+        Event ID: 10096222
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: WASHITA
+
+        Month Name: April
+        Event ID: 10096223
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: HUGHES
+
+        Month Name: April
+        Event ID: 10096224
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: COAL
+
+        Month Name: April
+        Event ID: 10117453
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: BERKELEY
+
+        Month Name: April
+        Event ID: 10120411
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: CALLAHAN
+
+        Month Name: April
+        Event ID: 10120412
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: COMANCHE
+
+
+Query:range 1950 month_name "May" "May"
+
+
+        Month Name: May
+        Event ID: 9985755
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: VOLUSIA
+
+        Month Name: May
+        Event ID: 9985756
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: ORANGE
+
+        Month Name: May
+        Event ID: 9985757
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: ORANGE
+
+        Month Name: May
+        Event ID: 10001430
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: WHITFIELD
+
+        Month Name: May
+        Event ID: 10017009
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: MILLS
+
+        Month Name: May
+        Event ID: 10017010
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: MONTGOMERY
+
+        Month Name: May
+        Event ID: 10027578
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: RUSH
+
+        Month Name: May
+        Event ID: 10027579
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: BARTON
+
+        Month Name: May
+        Event ID: 10027580
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: PAWNEE
+
+        Month Name: May
+        Event ID: 10027581
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: JACKSON
+
+        Month Name: May
+        Event ID: 10027582
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: BROWN
+
+        Month Name: May
+        Event ID: 10027583
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: MITCHELL
+
+        Month Name: May
+        Event ID: 10027584
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: JEWELL
+
+        Month Name: May
+        Event ID: 10027585
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: OSBORNE
+
+        Month Name: May
+        Event ID: 10027586
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: CLOUD
+
+        Month Name: May
+        Event ID: 10027587
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: REPUBLIC
+
+        Month Name: May
+        Event ID: 10027588
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: RILEY
+
+        Month Name: May
+        Event ID: 10027589
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: KINGMAN
+
+        Month Name: May
+        Event ID: 10027590
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: JEWELL
+
+        Month Name: May
+        Event ID: 10027591
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: CHASE
+
+        Month Name: May
+        Event ID: 10027592
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: BUTLER
+
+        Month Name: May
+        Event ID: 10027593
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: PHILLIPS
+
+        Month Name: May
+        Event ID: 10027594
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: COMANCHE
+
+        Month Name: May
+        Event ID: 10027595
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: RILEY
+
+        Month Name: May
+        Event ID: 10032640
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: NATCHITOCHES
+
+        Month Name: May
+        Event ID: 10032641
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: WINN
+
+        Month Name: May
+        Event ID: 10032642
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: NATCHITOCHES
+
+        Month Name: May
+        Event ID: 10032643
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: LA SALLE
+
+        Month Name: May
+        Event ID: 10032644
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: CONCORDIA
+
+        Month Name: May
+        Event ID: 10032645
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: GRANT
+
+        Month Name: May
+        Event ID: 10032646
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: WINN
+
+        Month Name: May
+        Event ID: 10032647
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: CATAHOULA
+
+        Month Name: May
+        Event ID: 10032648
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: AVOYELLES
+
+        Month Name: May
+        Event ID: 10032649
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: DE SOTO
+
+        Month Name: May
+        Event ID: 10032650
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: SABINE
+
+        Month Name: May
+        Event ID: 10050382
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: JEFFERSON
+
+        Month Name: May
+        Event ID: 10050383
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: ADAMS
+
+        Month Name: May
+        Event ID: 10073782
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: NEMAHA
+
+        Month Name: May
+        Event ID: 10073783
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: RED WILLOW
+
+        Month Name: May
+        Event ID: 10077690
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: PITT
+
+        Month Name: May
+        Event ID: 10077691
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: WAKE
+
+        Month Name: May
+        Event ID: 10077692
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: WAKE
+
+        Month Name: May
+        Event ID: 10077693
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: MONTGOMERY
+
+        Month Name: May
+        Event ID: 10077694
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: UNION
+
+        Month Name: May
+        Event ID: 10077695
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: PITT
+
+        Month Name: May
+        Event ID: 10096225
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: CUSTER
+
+        Month Name: May
+        Event ID: 10096226
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: BECKHAM
+
+        Month Name: May
+        Event ID: 10096227
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: WOODWARD
+
+        Month Name: May
+        Event ID: 10096228
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: ELLIS
+
+        Month Name: May
+        Event ID: 10096229
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: PAYNE
+
+        Month Name: May
+        Event ID: 10096230
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: KINGFISHER
+
+        Month Name: May
+        Event ID: 10096231
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: PONTOTOC
+
+        Month Name: May
+        Event ID: 10096232
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: BEAVER
+
+        Month Name: May
+        Event ID: 10096233
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: DEWEY
+
+        Month Name: May
+        Event ID: 10096234
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: CUSTER
+
+        Month Name: May
+        Event ID: 10096235
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: WOODWARD
+
+        Month Name: May
+        Event ID: 10096236
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: MAYES
+
+        Month Name: May
+        Event ID: 10110746
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: HUTCHINSON
+
+        Month Name: May
+        Event ID: 10120413
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: OCHILTREE
+
+        Month Name: May
+        Event ID: 10120414
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: FORT BEND
+
+        Month Name: May
+        Event ID: 10120415
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: KENDALL
+
+        Month Name: May
+        Event ID: 10120416
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: DAWSON
+
+        Month Name: May
+        Event ID: 10120417
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: DENTON
+
+        Month Name: May
+        Event ID: 10162813
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: UINTA
+
+
+Query:range 1950 month_name "June" "June"
+
+
+        Month Name: June
+        Event ID: 10001431
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: CARROLL
+
+        Month Name: June
+        Event ID: 10001432
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: DE KALB
+
+        Month Name: June
+        Event ID: 10001433
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: LAMAR
+
+        Month Name: June
+        Event ID: 10009714
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: CARROLL
+
+        Month Name: June
+        Event ID: 10017011
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: STORY
+
+        Month Name: June
+        Event ID: 10027596
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: RICE
+
+        Month Name: June
+        Event ID: 10027597
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: MCPHERSON
+
+        Month Name: June
+        Event ID: 10028460
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: WICHITA
+
+        Month Name: June
+        Event ID: 10028461
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: SEDGWICK
+
+        Month Name: June
+        Event ID: 10028462
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: GRAHAM
+
+        Month Name: June
+        Event ID: 10050384
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: ATTALA
+
+        Month Name: June
+        Event ID: 10052051
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: WILKIN
+
+        Month Name: June
+        Event ID: 10063617
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: PULASKI
+
+        Month Name: June
+        Event ID: 10063618
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: SHELBY
+
+        Month Name: June
+        Event ID: 10073784
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: KNOX
+
+        Month Name: June
+        Event ID: 10073785
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: NUCKOLLS
+
+        Month Name: June
+        Event ID: 10089655
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: CASS
+
+        Month Name: June
+        Event ID: 10089656
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: DIVIDE
+
+        Month Name: June
+        Event ID: 10096237
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: KAY
+
+        Month Name: June
+        Event ID: 10120418
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: WASHINGTON
+
+        Month Name: June
+        Event ID: 10120419
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: AUSTIN
+
+        Month Name: June
+        Event ID: 10120420
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: HARTLEY
+
+        Month Name: June
+        Event ID: 10146801
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: RUSK
+
+        Month Name: June
+        Event ID: 10146802
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: PRICE
+
+        Month Name: June
+        Event ID: 10146803
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: CLARK
+
+        Month Name: June
+        Event ID: 10146804
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: ONEIDA
+
+        Month Name: June
+        Event ID: 10146805
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: MARATHON
+
+        Month Name: June
+        Event ID: 10146806
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: GREEN LAKE
+
+        Month Name: June
+        Event ID: 10162814
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: NIOBRARA
+
+        Month Name: June
+        Event ID: 10162815
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: WESTON
+
+
+Query:range 1950 month_name "July" "July"
+
+
+        Month Name: July
+        Event ID: 9986148
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: MIDDLESEX
+
+        Month Name: July
+        Event ID: 9986149
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: FAIRFIELD
+
+        Month Name: July
+        Event ID: 9991325
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: WELD
+
+        Month Name: July
+        Event ID: 10004028
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: ST. JOSEPH
+
+        Month Name: July
+        Event ID: 10004029
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: FOUNTAIN
+
+        Month Name: July
+        Event ID: 10004030
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: ALLEN
+
+        Month Name: July
+        Event ID: 10009715
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: LIVINGSTON
+
+        Month Name: July
+        Event ID: 10017012
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: BUCHANAN
+
+        Month Name: July
+        Event ID: 10028463
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: RILEY
+
+        Month Name: July
+        Event ID: 10028464
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: DICKINSON
+
+        Month Name: July
+        Event ID: 10028673
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: SCOTT
+
+        Month Name: July
+        Event ID: 10028674
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: MARSHALL
+
+        Month Name: July
+        Event ID: 10028675
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: ALLEN
+
+        Month Name: July
+        Event ID: 10063619
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: MORGAN
+
+        Month Name: July
+        Event ID: 10073786
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: BURT
+
+        Month Name: July
+        Event ID: 10077696
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: PITT
+
+        Month Name: July
+        Event ID: 10077697
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: CABARRUS
+
+        Month Name: July
+        Event ID: 10080563
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: QUAY
+
+        Month Name: July
+        Event ID: 10086809
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: VAN WERT
+
+        Month Name: July
+        Event ID: 10086810
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: ALLEN
+
+        Month Name: July
+        Event ID: 10104927
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: LEHIGH
+
+        Month Name: July
+        Event ID: 10104928
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: DAUPHIN
+
+        Month Name: July
+        Event ID: 10104929
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: CRAWFORD
+
+
+Query:range 1950 month_name "August" "August"
+
+
+        Month Name: August
+        Event ID: 9983004
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: ARKANSAS
+
+        Month Name: August
+        Event ID: 9985758
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: FRANKLIN
+
+        Month Name: August
+        Event ID: 9985759
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: JACKSON
+
+        Month Name: August
+        Event ID: 9991326
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: SEDGWICK
+
+        Month Name: August
+        Event ID: 9991327
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: SEDGWICK
+
+        Month Name: August
+        Event ID: 10028676
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: RAWLINS
+
+        Month Name: August
+        Event ID: 10028677
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: FINNEY
+
+        Month Name: August
+        Event ID: 10028678
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: GOVE
+
+        Month Name: August
+        Event ID: 10028679
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: HASKELL
+
+        Month Name: August
+        Event ID: 10038920
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: KENT
+
+        Month Name: August
+        Event ID: 10063620
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: GREENE
+
+        Month Name: August
+        Event ID: 10080564
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: SOCORRO
+
+        Month Name: August
+        Event ID: 10104930
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: BUCKS
+
+        Month Name: August
+        Event ID: 10147653
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: WOOD
+
+
+Query:range 1950 month_name "September" "September"
+
+
+        Month Name: September
+        Event ID: 10073787
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: LANCASTER
+
+        Month Name: September
+        Event ID: 10099490
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: HUGHES
+
+        Month Name: September
+        Event ID: 10099491
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: PITTSBURG
+
+
+Query:range 1950 month_name "October" "October"
+
+
+        Month Name: October
+        Event ID: 10077698
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: COLUMBUS
+
+        Month Name: October
+        Event ID: 10099492
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: CIMARRON
+
+
+Query:range 1950 month_name "November" "November"
+
+
+        Month Name: November
+        Event ID: 10035921
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: MUHLENBERG
+
+        Month Name: November
+        Event ID: 10035922
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: SCOTT
+
+        Month Name: November
+        Event ID: 10047275
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: NEWTON
+
+        Month Name: November
+        Event ID: 10104931
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: LANCASTER
+
+        Month Name: November
+        Event ID: 10104932
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: BERKS
+
+
+Query:range 1950 month_name "December" "December"
+
+
+        Month Name: December
+        Event ID: 9983005
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: IZARD
+
+        Month Name: December
+        Event ID: 10009716
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: MADISON
+
+        Month Name: December
+        Event ID: 10009717
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: MACOUPIN
+
+        Month Name: December
+        Event ID: 10009718
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: MADISON
+
+        Month Name: December
+        Event ID: 10009719
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: BOND
+
+        Month Name: December
+        Event ID: 10009720
+        Year: 1950
+        Event Type: Tornado
+        County/Zone Type: C
+        County/Zone Name: RANDOLPH
+
+
+
