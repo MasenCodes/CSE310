@@ -96,19 +96,11 @@ void addToFatality(fatality_event* fatal, string fullRow) {
 
     // fixing the bad input we were given
     int len = fullRow.length();
-    string properRow;
-    if(fullRow.at(len - 1) == '\r') {
-        properRow = fullRow.substr(0, fullRow.length() - 1); // remove \r
-    }
-    else {
-        properRow = fullRow;
-    }
-
     // -1 and ? are defaults
     int loopIndex = 0;
     int charIndex = 0;
     string data = "-1";
-    for(char c : properRow) {
+    for(char c : fullRow) {
         if(loopIndex == 2) {
             if(c != ',') {
                 fatal->fatality_type = c;
@@ -124,12 +116,22 @@ void addToFatality(fatality_event* fatal, string fullRow) {
         }
         else if(loopIndex == 3) {
             if (c != ',') {
-                fatal->fatality_date[charIndex] = c;
-                charIndex++;
+                if(charIndex < 24) {
+                    fatal->fatality_date[charIndex] = c;
+                    charIndex++;
+                }
+                else if(charIndex == 24) {
+                    fatal->fatality_date[charIndex] = '\0';
+                    charIndex++;
+                }
             }
             else {
                 if (!charIndex) {
                     fatal->fatality_date[0] = '?';
+                    fatal->fatality_date[1] = '\0';
+                }
+                else if (charIndex <= 24) {
+                    fatal->fatality_date[charIndex] = '\0';
                 }
                 loopIndex++;
                 charIndex = 0;
@@ -149,8 +151,27 @@ void addToFatality(fatality_event* fatal, string fullRow) {
             }
         }
         else if(loopIndex == 6) {
-            fatal->fatality_location[charIndex] = c;
-            charIndex++;
+            if (c != ',') {
+                if(charIndex < 29) {
+                    fatal->fatality_location[charIndex] = c;
+                    charIndex++;
+                }
+                else if(charIndex == 29) {
+                    fatal->fatality_date[charIndex] = '\0';
+                    charIndex++;
+                }
+            }
+            else {
+                if (!charIndex) {
+                    fatal->fatality_location[0] = '?';
+                    fatal->fatality_location[1] = '\0';
+                }
+                else if (charIndex <= 29) {
+                    fatal->fatality_location[charIndex] = '\0';
+                }
+                loopIndex++;
+                charIndex = 0;
+            }
         }
         else if(c == ',') {
             if(loopIndex == 0) {
@@ -171,10 +192,14 @@ void addToFatality(fatality_event* fatal, string fullRow) {
     }
     if(!charIndex) {
         fatal->fatality_location[0] = '?';
+        fatal->fatality_location[1] = '\0';
+    }
+    else {
+        fatal->fatality_location[charIndex] = '\0';
     }
 }
 
-void addToStorm(storm_event* storm, string fullRow, fatality_event* fatalEvent= nullptr) {
+void addToStorm(storm_event* storm, string fullRow) {
     // 0 = EVENT_ID          7 = INJURIES_DIRECT
     // 1 = STATE             8 = INJURIES_INDIRECT
     // 2 = YEAR              9 = DEATHS_DIRECT
@@ -186,7 +211,6 @@ void addToStorm(storm_event* storm, string fullRow, fatality_event* fatalEvent= 
     // fixing the bad input we were given
     int len = fullRow.length();
     // -1 and ? are defaults
-    storm->f = fatalEvent;
     int loopIndex = 0;
     int charIndex = 0;
     string data = "-1";
@@ -438,7 +462,7 @@ void deleteTree(bst* head) {
     deleteTree(head->right);
     delete head;
 }
-// ------------------------------ BST Algorithms -------------------------------------
+// ------------------------------ End BST Algorithms ---------------------------------
 
 // ----------------------------- Heap Algorithms -------------------------------------
 void swap(heap_entry* a, heap_entry* b) {
@@ -447,7 +471,7 @@ void swap(heap_entry* a, heap_entry* b) {
 void max_heapify(heap_entry* h, int index, int size) {
 
 }
-// ----------------------------- Heap Algorithms -------------------------------------
+// ----------------------------- End Heap Algorithms ---------------------------------
 
 // ----------------------------- Hash Algorithms -------------------------------------
 int hashID(int event_id) {
@@ -462,6 +486,15 @@ hash_table_entry* convertFromEvent(storm_event* event, int index) {
     return entry;
 }
 
+int findEntryIndex(hash_table_entry* table[], int event_id) {
+    int key = hashID(event_id);
+    auto* entry = table[key]->next;
+    while(entry->event_id != event_id) {
+        entry = entry->next;
+    }
+    return entry->event_index;
+}
+
 void insertEntry(hash_table_entry* table[], hash_table_entry* entry) {
     int key = hashID(entry->event_id);
     if(table[key]->next == nullptr) {
@@ -474,7 +507,7 @@ void insertEntry(hash_table_entry* table[], hash_table_entry* entry) {
     }
 }
 
-// ----------------------------- Hash Algorithms -------------------------------------
+// ----------------------------- End Hash Algorithms ---------------------------------
 int main(int argc, char * argv[]) {
     if (argc > 1) {
         // collect year bounds and create data to them
@@ -488,28 +521,29 @@ int main(int argc, char * argv[]) {
         auto* storms = new annual_storms[upTo];
         auto* table = new hash_table_entry[HASH_TABLE_SIZE];
         for (int ii = 0; ii < upTo; ii++) {
+            // get the details for the given year
             string detail_row;
             fstream detailsFile;
             string details_file;
-            // open file and prepare variables
             details_file = "details-" + to_string(startYear + ii) + ".csv";
-            //lineCount[ii] = numberOfLines(details_file) - 1;
             detailsFile.open(details_file);
             getline(detailsFile, detail_row); // throw away first line
             string temp;
+            // get the line count for file
             int count = 0;
             while(getline(detailsFile, temp)) {
                 count++;
             }
             lineCount[ii] = count;
-            detailsFile.clear();
-            detailsFile.seekg(0);
+            detailsFile.clear();  // reset file
+            detailsFile.seekg(0); // reset file
             getline(detailsFile, detail_row); // throw away first line
+
             // make annual storm
             storms[ii].year = startYear + ii;
             storms[ii].events = new storm_event[lineCount[ii]];
 
-            // get each line of the file
+            // get each line of the details file
             int index = 0;
             while (getline(detailsFile, detail_row)) {
                 // add the event
@@ -517,8 +551,24 @@ int main(int argc, char * argv[]) {
                 insertEntry(&table, convertFromEvent(&(storms[ii].events[index]), index));
                 index++;
             }
-            //detailsFile.clear();
             detailsFile.close();
+
+            // get the fatalities for given year
+            string fatal_row;
+            fstream fatalitiesFile;
+            string fatalities_file;
+            fatalities_file = "fatalities-" + to_string(startYear + ii) + ".csv";
+            fatalitiesFile.open(fatalities_file);
+            getline(fatalitiesFile, fatal_row); // throw away first line
+
+            // get each line for the fatalities file and add to respective event
+            while(getline(fatalitiesFile, fatal_row)) {
+                auto* fatalEntry = new fatality_event;
+                addToFatality(fatalEntry, fatal_row);
+                int eventIndex = findEntryIndex(&table, fatalEntry->event_id);
+                storms[ii].events[eventIndex].f->next = fatalEntry; // keep the head as a pointer
+            }
+            fatalitiesFile.close();
         }
 
         // handle range queries here
