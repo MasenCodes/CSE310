@@ -1,5 +1,2 @@
-4
-range 1951 month_name "January" "January"
-range 1952 state "A" "C"
-range all month_name "June" "July"
-range all state "ARIZONA" "NORTH CAROLINA"
+3
+find max 1950  <n>,

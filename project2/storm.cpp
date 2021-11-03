@@ -9,7 +9,6 @@
 using namespace std;
 
 string SPACE = "        ";
-int HASH_TABLE_SIZE = 2293;
 
 
 void printEvent(storm_event* event, string field) {
@@ -45,25 +44,57 @@ void printEvent(storm_event* event, string field) {
 }
 
 void printFatality(fatality_event* fatality) {
-    cout << "Fatality ID: " << fatality->fatality_id << endl;
-    cout << "Event ID: " << fatality->event_id << endl;
-    cout << "Fatality Type: " << fatality->fatality_type << endl;
-    cout << "Fatality Date: " << fatality->fatality_date << endl;
-    cout << "Fatality Age: " << fatality->fatality_age << endl;
-    cout << "Fatality Sex: " << fatality->fatality_sex << endl;
-    cout << "Fatality Location: " << fatality->fatality_location << endl;
+    cout << '\n';
+    if (fatality->fatality_id) {
+        cout << "Fatality ID: " << fatality->fatality_id << endl;
+    }
+    if (fatality->event_id) {
+        cout << "Event ID: " << fatality->event_id << endl;
+    }
+    if (fatality->fatality_type != '?') {
+        cout << "Fatality Type: " << fatality->fatality_type << endl;
+    }
+    if (strcmp(fatality->fatality_date, "?") != 0) {
+        cout << "Fatality Date: " << fatality->fatality_date << endl;
+    }
+    if (fatality->fatality_age) {
+        cout << "Fatality Age: " << fatality->fatality_age << endl;
+    }
+    if (fatality->fatality_sex != '?') {
+        cout << "Fatality Sex: " << fatality->fatality_sex << endl;
+    }
+    if (strcmp(fatality->fatality_location, "?") != 0) {
+        cout << "Fatality Location: " << fatality->fatality_location << endl;
+    }
 }
 
-int numberOfLines(string fileName) {
-    fstream file;
-    file.open(fileName, fstream::in);
-    string temp;
-    int count = 0;
-    while(getline(file, temp)) {
-        count++;
+bool isPrime(int num) {
+    for (int ii=2; ii < num; ii++)
+        if (num % ii == 0)
+            return false;
+    return true;
+}
+
+int getHashSize(int upTo, int startYear) {
+    int totalCount = 0;
+    for(int ii=0; ii < upTo; ii++) {
+        string fileName = "details-" + to_string(startYear + ii) + ".csv";
+        fstream file;
+        file.open(fileName, fstream::in);
+        string temp;
+        getline(file, temp); // throw away first line
+        int count = 0;
+        while(getline(file, temp)) {
+            count++;
+        }
+        file.close();
+        totalCount += count;
     }
-    file.close();
-    return count;
+    totalCount = totalCount * 3;
+    while(!isPrime(totalCount)) {
+        totalCount += 1;
+    }
+    return totalCount;
 }
 
 int convert(string val) {
@@ -197,6 +228,7 @@ void addToFatality(fatality_event* fatal, string fullRow) {
     else {
         fatal->fatality_location[charIndex] = '\0';
     }
+    fatal->next = nullptr;
 }
 
 void addToStorm(storm_event* storm, string fullRow) {
@@ -214,6 +246,7 @@ void addToStorm(storm_event* storm, string fullRow) {
     int loopIndex = 0;
     int charIndex = 0;
     string data = "-1";
+    storm->f = nullptr;
     for(char c : fullRow) {
         if(loopIndex == 1) {
             if(c != ',') {
@@ -474,8 +507,8 @@ void max_heapify(heap_entry* h, int index, int size) {
 // ----------------------------- End Heap Algorithms ---------------------------------
 
 // ----------------------------- Hash Algorithms -------------------------------------
-int hashID(int event_id) {
-    return event_id % HASH_TABLE_SIZE;
+int hashID(int event_id, int tableSize) {
+    return event_id % tableSize;
 }
 
 hash_table_entry* convertFromEvent(storm_event* event, int index) {
@@ -483,27 +516,44 @@ hash_table_entry* convertFromEvent(storm_event* event, int index) {
     entry->event_id = event->event_id;
     entry->event_index = index;
     entry->year = event->year;
+    entry->next = nullptr;
     return entry;
 }
 
-int findEntryIndex(hash_table_entry* table[], int event_id) {
-    int key = hashID(event_id);
-    auto* entry = table[key]->next;
+int findEntryIndex(hash_table_entry* table[], int event_id, int tableSize) {
+    int key = hashID(event_id, tableSize);
+    hash_table_entry* entry = table[key];
     while(entry->event_id != event_id) {
         entry = entry->next;
     }
     return entry->event_index;
 }
 
-void insertEntry(hash_table_entry* table[], hash_table_entry* entry) {
-    int key = hashID(entry->event_id);
-    if(table[key]->next == nullptr) {
-        table[key]->next = entry;
+void insertEntry(hash_table_entry* table[], storm_event* event, int tableSize, int index) {
+    int key = hashID(event->event_id, tableSize);
+    if(table[key] == nullptr) {
+        table[key] = convertFromEvent(event, index);
     }
     else {
-        hash_table_entry* temp = table[key]->next;
-        table[key]->next = entry;
-        entry->next = temp;
+        hash_table_entry* temp = table[key];
+        table[key] = convertFromEvent(event, index);;
+        table[key]->next = temp;
+    }
+}
+
+void insertFatality(storm_event* event, fatality_event* fatal) {
+    if(event->f == nullptr) {
+        event->f = fatal;
+        event->f->next = nullptr;
+    }
+    else {
+        fatality_event* trav = event->f;
+        while(trav->next and trav->fatality_id > fatal->fatality_id) {
+            trav = trav->next;
+        }
+        fatality_event* temp = trav;
+        trav = fatal;
+        trav->next = temp;
     }
 }
 
@@ -513,13 +563,18 @@ int main(int argc, char * argv[]) {
         // collect year bounds and create data to them
         int startYear = atoi(argv[1]);
         int upTo = atoi(argv[2]);
+        int tableSize = getHashSize(upTo, startYear);
 
         // for creating memory of the csv files
         int lineCount[upTo];
 
         // create struct array and initialize from files
         auto* storms = new annual_storms[upTo];
-        auto* table = new hash_table_entry[HASH_TABLE_SIZE];
+        // create and initialize the hash table
+        hash_table_entry* table[tableSize];
+        for (int ii = 0; ii < tableSize; ii++) {
+            table[ii] = nullptr;
+        }
         for (int ii = 0; ii < upTo; ii++) {
             // get the details for the given year
             string detail_row;
@@ -548,7 +603,7 @@ int main(int argc, char * argv[]) {
             while (getline(detailsFile, detail_row)) {
                 // add the event
                 addToStorm(&(storms[ii].events[index]), detail_row);
-                insertEntry(&table, convertFromEvent(&(storms[ii].events[index]), index));
+                insertEntry(table, &(storms[ii].events[index]), tableSize, index);
                 index++;
             }
             detailsFile.close();
@@ -565,8 +620,8 @@ int main(int argc, char * argv[]) {
             while(getline(fatalitiesFile, fatal_row)) {
                 auto* fatalEntry = new fatality_event;
                 addToFatality(fatalEntry, fatal_row);
-                int eventIndex = findEntryIndex(&table, fatalEntry->event_id);
-                storms[ii].events[eventIndex].f->next = fatalEntry; // keep the head as a pointer
+                int eventIndex = findEntryIndex(table, fatalEntry->event_id, tableSize);
+                insertFatality(&(storms[ii].events[eventIndex]), fatalEntry); // insert the fatality into the events LL
             }
             fatalitiesFile.close();
         }
@@ -588,7 +643,7 @@ int main(int argc, char * argv[]) {
             bool inPar = false;
             string temp;
             for (char c: line) {
-                if (c == ' ' and not inPar) {  // this is breaking 1966
+                if (c == ' ' and not inPar) {
                     queries[queryIndex] = temp;
                     queryIndex++;
                     temp = "";
@@ -606,43 +661,77 @@ int main(int argc, char * argv[]) {
             }
             queries[4] = temp;
 
-            bool first = true;
-            if (queries[1] == "all") {  // get all the years supplied from argv
-                for (int ii = 0; ii < upTo; ii++) {
-                    for (int jj = 0; jj < lineCount[ii]; jj++) {
+            // Handling of all query types:
+            if (queries[0] == "range"){  // range query
+                bool first = true;
+                if (queries[1] == "all") {  // get all the years supplied from argv
+                    for (int ii = 0; ii < upTo; ii++) {
+                        for (int jj = 0; jj < lineCount[ii]; jj++) {
+                            if (first) {
+                                head = insertNode(head, &(storms[ii].events[jj]), jj, queries[2]);
+                                first = false;
+                            } else {
+                                insertNode(head, &(storms[ii].events[jj]), jj, queries[2]);
+                            }
+                        }
+                    }
+
+                }
+                else { // get a select year
+                    int stormIndex = stoi(queries[1]) - startYear; // the index of the needed storm in storms
+                    for (int jj = 0; jj < lineCount[stormIndex]; jj++) {
                         if (first) {
-                            head = insertNode(head, &(storms[ii].events[jj]), jj, queries[2]);
+                            head = insertNode(head, &(storms[stormIndex].events[jj]), jj, queries[2]);
                             first = false;
                         } else {
-                            insertNode(head, &(storms[ii].events[jj]), jj, queries[2]);
+                            insertNode(head, &(storms[stormIndex].events[jj]), jj, queries[2]);
                         }
                     }
                 }
-            } else {  // get a select year
-                int stormIndex = stoi(queries[1]) - startYear; // the index of the needed storm in storms
-                for (int jj = 0; jj < lineCount[stormIndex]; jj++) {
-                    if (first) {
-                        head = insertNode(head, &(storms[stormIndex].events[jj]), jj, queries[2]);
-                        first = false;
-                    } else {
-                        insertNode(head, &(storms[stormIndex].events[jj]), jj, queries[2]);
+                // find the matching events and print them
+                cout << "\n";
+                cout << "Query:" << line << "\n\n";
+                int check = 0;
+                findAndPrint(head, queries[3], queries[4], queries[2], upTo, storms, &check);
+                if (check == 0) {
+                    cout << "\n";
+                    cout << SPACE << "No storm events found for the given range";
+                    cout << '\n';
+                }
+                cout << "\n";
+                deleteTree(head);
+                head = nullptr;
+            }
+            else if (queries[2] == "fatality") { // find max fatality
+                cout << "fatality" << endl;
+            }
+            else if (queries[1] == "max") { // find max damage_type
+                cout << "max" << endl;
+            }
+            else if (queries[1] == "event") { // find event in hash table to print fatalities
+                int event_id = stoi(queries[2]);
+                int index = findEntryIndex(table, event_id, tableSize);
+                storm_event* found = nullptr;
+                for(int ii=0; ii<upTo; ii++) {
+                    if(storms[ii].events[index].event_id == event_id) {
+                        found = &(storms[ii].events[index]);
                     }
                 }
-            }
+                if (found == nullptr) {
+                    cout << "Storm event " << event_id << " not found" << endl;
 
-            // find the matching events and print them
-            cout << "\n";
-            cout << "Query:" << line << "\n\n";
-            int check = 0;
-            findAndPrint(head, queries[3], queries[4], queries[2], upTo, storms, &check);
-            if (check == 0) {
-                cout << "\n";
-                cout << SPACE << "No storm events found for the given range";
-                cout << '\n';
+                }
+                else if(found->f == nullptr) {
+                    cout << "No fatalities" << endl;
+                }
+                else {
+                    // print all associated fatalites
+                    fatality_event* trav = found->f;
+                    do {
+                        printFatality(trav);
+                    } while (trav->next != nullptr);
+                }
             }
-            cout << "\n";
-            deleteTree(head);
-            head = nullptr;
         }
         cout << "\n\n";
     }

@@ -12,16 +12,15 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b18cb2b4-5320-4917-8097-1c4b0fe2a8ea" name="Changes" comment="WORKINGGGGG!">
-      <change afterPath="$PROJECT_DIR$/project2/test_output/OP_Lex_queries-1950-1953.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project2/test_output/OP_Lex_queries-1950-only.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project2/test_output/OP_Lex_queries-1966-only.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project2/test_output/OP_Lex_queries-1996-only.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project2/tester.cpp" afterDir="false" />
+    <list default="true" id="b18cb2b4-5320-4917-8097-1c4b0fe2a8ea" name="Changes" comment="fatality events are now being added (still need to test functionality)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/project2/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/defns.h" beforeDir="false" afterPath="$PROJECT_DIR$/project2/defns.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project2/fatalities-1950.csv" beforeDir="false" afterPath="$PROJECT_DIR$/project2/fatalities-1950.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project2/fatalities-1951.csv" beforeDir="false" afterPath="$PROJECT_DIR$/project2/fatalities-1951.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project2/fatalities-1952.csv" beforeDir="false" afterPath="$PROJECT_DIR$/project2/fatalities-1952.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project2/fatalities-1953.csv" beforeDir="false" afterPath="$PROJECT_DIR$/project2/fatalities-1953.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project2/fatalities-1966.csv" beforeDir="false" afterPath="$PROJECT_DIR$/project2/fatalities-1966.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project2/storm.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/project2/storm.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project2/test_query.txt" beforeDir="false" afterPath="$PROJECT_DIR$/project2/test_query.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,14 +92,9 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="storm" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="1950 4" REDIRECT_INPUT="true" REDIRECT_INPUT_PATH="$PROJECT_DIR$/project2/queries-1950-1953.txt" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="project2" TARGET_NAME="storm" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="project2" RUN_TARGET_NAME="storm">
+    <configuration name="storm" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="1950 1" REDIRECT_INPUT="true" REDIRECT_INPUT_PATH="$PROJECT_DIR$/project2/queries-1950-only.txt" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="project2" TARGET_NAME="storm" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="project2" RUN_TARGET_NAME="storm">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <list>
@@ -159,7 +153,11 @@
       <workItem from="1634679528833" duration="7569000" />
       <workItem from="1634760723528" duration="11130000" />
       <workItem from="1634864458243" duration="749000" />
-      <workItem from="1635296021215" duration="3339000" />
+      <workItem from="1635296021215" duration="3608000" />
+      <workItem from="1635385633094" duration="3635000" />
+      <workItem from="1635639144936" duration="4105000" />
+      <workItem from="1635808316224" duration="8707000" />
+      <workItem from="1635903842612" duration="4363000" />
     </task>
     <task id="LOCAL-00001" summary="added shift and read">
       <created>1630977554940</created>
@@ -294,7 +292,21 @@
       <option name="project" value="LOCAL" />
       <updated>1634612643664</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="adding functionality for final submission">
+      <created>1635303865438</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1635303865438</updated>
+    </task>
+    <task id="LOCAL-00021" summary="fatality events are now being added (still need to test functionality)">
+      <created>1635389291605</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1635389291605</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -332,7 +344,9 @@
     <MESSAGE value="still need to fix comparisons, event ID is not working" />
     <MESSAGE value="fix comparisons and seg fault on large files" />
     <MESSAGE value="WORKINGGGGG!" />
-    <option name="LAST_COMMIT_MESSAGE" value="WORKINGGGGG!" />
+    <MESSAGE value="adding functionality for final submission" />
+    <MESSAGE value="fatality events are now being added (still need to test functionality)" />
+    <option name="LAST_COMMIT_MESSAGE" value="fatality events are now being added (still need to test functionality)" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
