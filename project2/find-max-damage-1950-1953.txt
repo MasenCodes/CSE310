@@ -1,0 +1,11 @@
+10
+find max 1950 damage_property 10
+find max 1950 damage_crops 3
+find max 1951 damage_property 2
+find max 1951 damage_crops 1
+find max 1952 damage_property 1
+find max 1952 damage_crops 3
+find max 1953 damage_property 1
+find max 1953 damage_crops 1
+find max all damage_property 10
+find max all damage_crops 10

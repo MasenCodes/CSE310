@@ -495,10 +495,39 @@ void deleteTree(bst* head) {
 
 // ----------------------------- Heap Algorithms -------------------------------------
 void swap(heap_entry* a, heap_entry* b) {
-
+    heap_entry* temp = a;
+    a = b;
+    b = temp;
 }
-void max_heapify(heap_entry* h, int index, int size) {
 
+void max_heapify(heap_entry* h[], int index, int size) {
+    int left = (2 * index) + 1;
+    int right = (2 * index)  + 2;
+    int largest = index;
+    if(left < size and h[left]->damage_amount > h[largest]->damage_amount) {
+        largest = left;
+    }
+    if(right < size and h[right]->damage_amount > h[largest]->damage_amount) {
+        largest = right;
+    }
+    if(largest != index) {
+        swap(h[index], h[largest]);
+        max_heapify(h, largest, size);
+    }
+}
+
+void build_heap(heap_entry* h[], int size) {
+    for(int ii = 0; ii < (size / 2); ii++) {
+        max_heapify(h, ii, size);
+    }
+}
+
+heap_entry deleteHeapEntry(heap_entry* h[], int& size, int index) {
+    heap_entry deleted = *h[index]; // this is what we return
+    swap(h[index], h[size - 1]);
+    h[size - 1] = nullptr; // free memory
+    size -= 1; // adjust size
+    return deleted;
 }
 // ----------------------------- End Heap Algorithms ---------------------------------
 
@@ -713,16 +742,55 @@ int main(int argc, char * argv[]) {
                 cout << "fatality" << endl;
             }
             else if (queries[1] == "max") { // find max damage_type
+                int size;
+                heap_entry** heap;
                 if (queries[2] == "all") { // all years
+                    // get the size for the heap
+                    size = 0;
                     for(int ii=0; ii<upTo; ii++) {
-
+                        size += lineCount[ii];
                     }
+
+                    // make the array for heap
+                    heap = new heap_entry*[size];
+                    int index = 0;
+                    for(int ii=0; ii<upTo; ii++) {
+                        for(int jj=0; jj<lineCount[ii]; jj++, index++) {
+                            heap[index] = new heap_entry;
+                            heap[index]->event_index = jj;
+                            heap[index]->year = storms[ii].events[jj].year;
+                            if(queries[3] == "damage_crops") {
+                                heap[index]->damage_amount = storms[ii].events[jj].damage_crops;
+                            }
+                            else {
+                                heap[index]->damage_amount = storms[ii].events[jj].damage_property;
+                            }
+                        }
+                    }
+
                 }
                 else { // select year
+                    // calculate years and indexing
                     int year = stoi(queries[2]);
+                    int index = startYear - year;
+                    size = lineCount[index];
 
+                    // make the array for heap
+                    heap = new heap_entry*[size];
+                    for (int ii = 0; ii < size; ii++) {
+                        heap[ii] = new heap_entry;
+                        heap[ii]->event_index = ii;
+                        heap[ii]->year = storms[index].events[ii].year;
+                        if (queries[3] == "damage_crops") {
+                            heap[ii]->damage_amount = storms[index].events[ii].damage_crops;
+                        } else {
+                            heap[ii]->damage_amount = storms[index].events[ii].damage_property;
+                        }
+                    }
                 }
-                cout << "max" << endl;
+                // build the heap after the respective array was created
+                build_heap(heap, size);
+
             }
             else if (queries[1] == "event") { // find event in hash table to print fatalities
                 int event_id = stoi(queries[2]);

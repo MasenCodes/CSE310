@@ -12,10 +12,14 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b18cb2b4-5320-4917-8097-1c4b0fe2a8ea" name="Changes" comment="added final project submission requirements">
+    <list default="true" id="b18cb2b4-5320-4917-8097-1c4b0fe2a8ea" name="Changes" comment="event query working">
+      <change afterPath="$PROJECT_DIR$/project2/README-1950-1953.rtf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project2/find-event-1950-1953.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project2/find-max-damage-1950-1953.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project2/find-max-fatality-1950-1953.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project2/mix-1950-1953.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project2/storm.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/project2/storm.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/test_query.txt" beforeDir="false" afterPath="$PROJECT_DIR$/project2/test_query.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +76,11 @@
     </key>
   </component>
   <component name="RunManager" selected="CMake Application.storm">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="decode.cpp" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="mergesort" REDIRECT_INPUT="true" REDIRECT_INPUT_PATH="$PROJECT_DIR$/ref_input/encoded_tongue-twisters.txt" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="project2" TARGET_NAME="decode.cpp" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="project2" RUN_TARGET_NAME="decode.cpp">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -85,11 +94,6 @@
     <configuration name="storm" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="1950 1" REDIRECT_INPUT="true" REDIRECT_INPUT_PATH="$PROJECT_DIR$/project2/queries-1950-only.txt" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="project2" TARGET_NAME="storm" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="project2" RUN_TARGET_NAME="storm">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <list>
@@ -153,7 +157,8 @@
       <workItem from="1635639144936" duration="4105000" />
       <workItem from="1635808316224" duration="8707000" />
       <workItem from="1635903842612" duration="4436000" />
-      <workItem from="1635984809443" duration="6257000" />
+      <workItem from="1635984809443" duration="6280000" />
+      <workItem from="1636051732537" duration="4597000" />
     </task>
     <task id="LOCAL-00001" summary="added shift and read">
       <created>1630977554940</created>
@@ -309,7 +314,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635908807482</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="event query working">
+      <created>1635992362420</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1635992362420</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -350,7 +362,8 @@
     <MESSAGE value="adding functionality for final submission" />
     <MESSAGE value="fatality events are now being added (still need to test functionality)" />
     <MESSAGE value="added final project submission requirements" />
-    <option name="LAST_COMMIT_MESSAGE" value="added final project submission requirements" />
+    <MESSAGE value="event query working" />
+    <option name="LAST_COMMIT_MESSAGE" value="event query working" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

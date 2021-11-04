@@ -1,0 +1,11 @@
+10
+find max 1950 damage_property 2
+range 1951 month_name "February" "February"
+find max 1953 damage_crops 3
+find event 10073787
+find max fatality 1953 5
+find max fatality all 5
+find event 9986148
+find event 11001100
+range 1952 state "AA" "CZ"
+range all month_name "May" "November"

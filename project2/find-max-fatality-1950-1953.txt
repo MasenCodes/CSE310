@@ -1,0 +1,6 @@
+5
+find max fatality 1950 10
+find max fatality 1951 2
+find max fatality 1952 1
+find max fatality 1953 5
+find max fatality all 5
