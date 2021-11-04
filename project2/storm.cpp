@@ -125,8 +125,6 @@ void addToFatality(fatality_event* fatal, string fullRow) {
     // 2 = FATALITY_TYPE    6 = FATALITY_LOCATION
     // 3 = FATALITY_DATE
 
-    // fixing the bad input we were given
-    int len = fullRow.length();
     // -1 and ? are defaults
     int loopIndex = 0;
     int charIndex = 0;
@@ -240,8 +238,6 @@ void addToStorm(storm_event* storm, string fullRow) {
     // 5 = CZ_TYPE          12 = DAMAGE_CROPS
     // 6 = CZ_NAME
 
-    // fixing the bad input we were given
-    int len = fullRow.length();
     // -1 and ? are defaults
     int loopIndex = 0;
     int charIndex = 0;
@@ -521,13 +517,24 @@ hash_table_entry* convertFromEvent(storm_event* event, int index) {
 }
 
 int findEntryIndex(hash_table_entry* table[], int event_id, int tableSize) {
+    // finds the event index for given event id, returns -1 if not found
     int key = hashID(event_id, tableSize);
+    if(key > tableSize) {
+        return -1;
+    }
     hash_table_entry* entry = table[key];
+    if(entry == nullptr) {
+        return -1;
+    }
     while(entry->event_id != event_id) {
+        if(entry->next == nullptr and entry->event_id != event_id) {
+            return -1;
+        }
         entry = entry->next;
     }
     return entry->event_index;
 }
+
 
 void insertEntry(hash_table_entry* table[], storm_event* event, int tableSize, int index) {
     int key = hashID(event->event_id, tableSize);
@@ -548,7 +555,7 @@ void insertFatality(storm_event* event, fatality_event* fatal) {
     }
     else {
         fatality_event* trav = event->f;
-        while(trav->next and trav->fatality_id > fatal->fatality_id) {
+        while(trav->next != nullptr and trav->fatality_id > fatal->fatality_id) {
             trav = trav->next;
         }
         fatality_event* temp = trav;
@@ -556,8 +563,8 @@ void insertFatality(storm_event* event, fatality_event* fatal) {
         trav->next = temp;
     }
 }
-
 // ----------------------------- End Hash Algorithms ---------------------------------
+
 int main(int argc, char * argv[]) {
     if (argc > 1) {
         // collect year bounds and create data to them
@@ -659,7 +666,7 @@ int main(int argc, char * argv[]) {
                     }
                 }
             }
-            queries[4] = temp;
+            queries[queryIndex] = temp;
 
             // Handling of all query types:
             if (queries[0] == "range"){  // range query
@@ -706,30 +713,42 @@ int main(int argc, char * argv[]) {
                 cout << "fatality" << endl;
             }
             else if (queries[1] == "max") { // find max damage_type
+                if (queries[2] == "all") { // all years
+                    for(int ii=0; ii<upTo; ii++) {
+
+                    }
+                }
+                else { // select year
+                    int year = stoi(queries[2]);
+
+                }
                 cout << "max" << endl;
             }
             else if (queries[1] == "event") { // find event in hash table to print fatalities
                 int event_id = stoi(queries[2]);
                 int index = findEntryIndex(table, event_id, tableSize);
-                storm_event* found = nullptr;
-                for(int ii=0; ii<upTo; ii++) {
-                    if(storms[ii].events[index].event_id == event_id) {
-                        found = &(storms[ii].events[index]);
-                    }
-                }
-                if (found == nullptr) {
+                // default return -1 means invalid index
+                if (index == -1) {
                     cout << "Storm event " << event_id << " not found" << endl;
-
-                }
-                else if(found->f == nullptr) {
-                    cout << "No fatalities" << endl;
                 }
                 else {
-                    // print all associated fatalites
-                    fatality_event* trav = found->f;
-                    do {
-                        printFatality(trav);
-                    } while (trav->next != nullptr);
+                    storm_event* found = nullptr;
+                    for(int ii=0; ii<upTo; ii++) {
+                        if(storms[ii].events[index].event_id == event_id) {
+                            found = &(storms[ii].events[index]);
+                        }
+                    }
+                    // no fatalities were found
+                    if(found->f == nullptr) {
+                        cout << "No fatalities" << endl;
+                    }
+                    else {
+                        // print all associated fatalities
+                        fatality_event* trav = found->f;
+                        do {
+                            printFatality(trav);
+                        } while (trav->next != nullptr);
+                    }
                 }
             }
         }

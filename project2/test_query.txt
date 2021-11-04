@@ -1,2 +1,2 @@
-3
-find max 1950  <n>,
+1
+find event 11001100
