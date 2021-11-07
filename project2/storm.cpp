@@ -8,39 +8,73 @@
 
 using namespace std;
 
-string SPACE = "        ";
+string SPACE = "    ";
 
 
 void printEvent(storm_event* event, string field) {
     cout << '\n';
     if (field == "state") {
         if (strcmp(event->state, "?") != 0) {
-            cout << SPACE << "State: " << event->state << endl;
+            cout << "State: " << event->state << endl;
         }
     }
     else {
         if (strcmp(event->month_name, "?") != 0) {
-            cout << SPACE << "Month Name: " << event->month_name << endl;
+            cout << "Month Name: " << event->month_name << endl;
         }
     }
     if (event->event_id) {
-        cout << SPACE << "Event ID: " << event->event_id << endl;
+        cout << "Event ID: " << event->event_id << endl;
     }
     if (event->year) {
-        cout << SPACE << "Year: " << event->year << endl;
+        cout << "Year: " << event->year << endl;
     }
     if (strcmp(event->event_type, "?") != 0) {
-        cout << SPACE << "Event Type: " << event->event_type << endl;
+        cout << "Event Type: " << event->event_type << endl;
     }
     if (event->cz_type != '?') {
-        cout << SPACE << "County/Zone Type: " << event->cz_type << endl;
+        cout << "County/Zone Type: " << event->cz_type << endl;
     }
     if (event->cz_name[0] != '?') {
-        cout << SPACE << "County/Zone Name: " << event->cz_name << endl;
+        cout << "County/Zone Name: " << event->cz_name << endl;
     }
     else {
-        cout << SPACE << "County/Zone Name: " << endl;
+        cout << "County/Zone Name: " << endl;
     }
+}
+
+void printNewEvent(storm_event* event) {
+    cout << '\n';
+    if (event->event_id) {
+        cout << "Event ID: " << event->event_id << endl;
+    }
+    if (strcmp(event->state, "?") != 0) {
+        cout << "State: " << event->state << endl;
+    }
+    if (event->year) {
+        cout << "Year: " << event->year << endl;
+    }
+    if (strcmp(event->month_name, "?") != 0) {
+        cout << "Month Name: " << event->month_name << endl;
+    }
+    if (strcmp(event->event_type, "?") != 0) {
+        cout << "Event Type: " << event->event_type << endl;
+    }
+    if (event->cz_type != '?') {
+        cout << "County/Zone Type: " << event->cz_type << endl;
+    }
+    if (event->cz_name[0] != '?') {
+        cout << "County/Zone Name: " << event->cz_name << endl;
+    }
+    else {
+        cout << "County/Zone Name: " << endl;
+    }
+    cout << "Injuries Direct: " << event->injuries_direct << endl;
+    cout << "Injuries Indirect: " << event->injuries_indirect << endl;
+    cout << "Death Direct: " << event->deaths_direct << endl;
+    cout << "Death Indirect: " << event->deaths_indirect << endl;
+    cout << "Damage Property: $" << event->damage_property << endl;
+    cout << "Damage Crops: $" << event->damage_crops << endl;
 }
 
 void printFatality(fatality_event* fatality) {
@@ -494,39 +528,67 @@ void deleteTree(bst* head) {
 // ------------------------------ End BST Algorithms ---------------------------------
 
 // ----------------------------- Heap Algorithms -------------------------------------
-void swap(heap_entry* a, heap_entry* b) {
-    heap_entry* temp = a;
-    a = b;
-    b = temp;
+
+bool largerThan(heap_entry* lrg, heap_entry* sml, string compareBy, annual_storms* storms[]=nullptr, int stormSize=0) {
+    if(compareBy == "damage") {
+        if(lrg->damage_amount == sml->damage_amount) {
+            if(lrg->year == sml->year) {
+                return lrg->event_id > sml->event_id; // innermost compare case (will never be equal)
+            }
+            return lrg->year > sml->year; // not equal just compare
+        }
+        return lrg->damage_amount > sml->damage_amount; // not equal just compare
+    }
+    else { // fatalities
+        storm_event* lrgStrm;
+        storm_event* smlStrm;
+        for(int ii=0; ii<stormSize; ii++) {
+            if(storms[ii]->events[lrg->event_index].event_id == lrg->event_id) {
+                lrgStrm = &(storms[ii]->events[lrg->event_index]);
+            }
+            if(storms[ii]->events[sml->event_index].event_id == sml->event_id) {
+                smlStrm = &(storms[ii]->events[sml->event_index]);
+            }
+        }
+        if(lrgStrm->deaths_direct + lrgStrm->deaths_indirect == smlStrm->deaths_direct + smlStrm->deaths_indirect) {
+            if(lrgStrm->year == smlStrm->year) {
+                return lrgStrm->event_id > smlStrm->event_id; // innermost compare case (will never be equal)
+            }
+            return lrgStrm->year > smlStrm->year; // not equal just compare
+        }
+        return lrgStrm->deaths_direct + lrgStrm->deaths_indirect > smlStrm->deaths_direct + smlStrm->deaths_indirect;
+    }
 }
 
-void max_heapify(heap_entry* h[], int index, int size) {
+void max_heapify(heap_entry* h[], int index, int size, string sortBy, annual_storms* storms[]=nullptr, int stormSize=0) {
     int left = (2 * index) + 1;
-    int right = (2 * index)  + 2;
+    int right = (2 * index) + 2;
     int largest = index;
-    if(left < size and h[left]->damage_amount > h[largest]->damage_amount) {
+
+    if(left < size and largerThan(h[left], h[largest], sortBy, storms, stormSize)) {
         largest = left;
     }
-    if(right < size and h[right]->damage_amount > h[largest]->damage_amount) {
+    if(right < size and largerThan(h[right], h[largest], sortBy, storms, stormSize)) {
         largest = right;
     }
     if(largest != index) {
         swap(h[index], h[largest]);
-        max_heapify(h, largest, size);
+        max_heapify(h, largest, size, sortBy, storms, stormSize);
     }
 }
 
-void build_heap(heap_entry* h[], int size) {
-    for(int ii = 0; ii < (size / 2); ii++) {
-        max_heapify(h, ii, size);
+void build_heap(heap_entry* h[], int size, string sortBy, annual_storms* storms[]=nullptr, int stormSize=0) {
+    for(int ii=(size - 1)/2; ii >= 0; ii--) {
+        max_heapify(h, ii, size, sortBy, storms, stormSize);
     }
 }
 
-heap_entry deleteHeapEntry(heap_entry* h[], int& size, int index) {
+heap_entry deleteHeapEntry(heap_entry* h[], int* size, int index, string sortBy) {
     heap_entry deleted = *h[index]; // this is what we return
-    swap(h[index], h[size - 1]);
-    h[size - 1] = nullptr; // free memory
-    size -= 1; // adjust size
+    swap(h[index], h[*size - 1]);
+    delete h[*size - 1]; // free memory
+    *size -= 1; // adjust size
+    max_heapify(h, 0, *size, sortBy);
     return deleted;
 }
 // ----------------------------- End Heap Algorithms ---------------------------------
@@ -541,6 +603,7 @@ hash_table_entry* convertFromEvent(storm_event* event, int index) {
     entry->event_id = event->event_id;
     entry->event_index = index;
     entry->year = event->year;
+    entry->event_id = event->event_id;
     entry->next = nullptr;
     return entry;
 }
@@ -563,7 +626,6 @@ int findEntryIndex(hash_table_entry* table[], int event_id, int tableSize) {
     }
     return entry->event_index;
 }
-
 
 void insertEntry(hash_table_entry* table[], storm_event* event, int tableSize, int index) {
     int key = hashID(event->event_id, tableSize);
@@ -697,6 +759,10 @@ int main(int argc, char * argv[]) {
             }
             queries[queryIndex] = temp;
 
+            // start by printing the query
+            cout << "\n";
+            cout << "Query: " << line << "\n";
+
             // Handling of all query types:
             if (queries[0] == "range"){  // range query
                 bool first = true;
@@ -725,24 +791,32 @@ int main(int argc, char * argv[]) {
                     }
                 }
                 // find the matching events and print them
-                cout << "\n";
-                cout << "Query:" << line << "\n\n";
                 int check = 0;
                 findAndPrint(head, queries[3], queries[4], queries[2], upTo, storms, &check);
                 if (check == 0) {
                     cout << "\n";
                     cout << SPACE << "No storm events found for the given range";
-                    cout << '\n';
                 }
-                cout << "\n";
                 deleteTree(head);
                 head = nullptr;
             }
             else if (queries[2] == "fatality") { // find max fatality
-                cout << "fatality" << endl;
+                int* size = new int;
+                int topMost = stoi(queries[4]);
+                heap_entry** heap;
+                if (queries[2] == "all") { // all years
+
+                }
+                else { // select year
+
+                }
+                // build the heap after the respective array was created
+                cout << "\nFatality Query" << endl;
+                heap = nullptr;
             }
             else if (queries[1] == "max") { // find max damage_type
                 int size;
+                int topMost = stoi(queries[4]);
                 heap_entry** heap;
                 if (queries[2] == "all") { // all years
                     // get the size for the heap
@@ -759,20 +833,20 @@ int main(int argc, char * argv[]) {
                             heap[index] = new heap_entry;
                             heap[index]->event_index = jj;
                             heap[index]->year = storms[ii].events[jj].year;
+                            heap[index]->event_id = storms[ii].events[jj].event_id;
                             if(queries[3] == "damage_crops") {
                                 heap[index]->damage_amount = storms[ii].events[jj].damage_crops;
                             }
-                            else {
+                            else { // damage property
                                 heap[index]->damage_amount = storms[ii].events[jj].damage_property;
                             }
                         }
                     }
-
                 }
                 else { // select year
                     // calculate years and indexing
                     int year = stoi(queries[2]);
-                    int index = startYear - year;
+                    int index = year - startYear;
                     size = lineCount[index];
 
                     // make the array for heap
@@ -781,22 +855,41 @@ int main(int argc, char * argv[]) {
                         heap[ii] = new heap_entry;
                         heap[ii]->event_index = ii;
                         heap[ii]->year = storms[index].events[ii].year;
+                        heap[ii]->event_id = storms[index].events[ii].event_id;
                         if (queries[3] == "damage_crops") {
                             heap[ii]->damage_amount = storms[index].events[ii].damage_crops;
-                        } else {
+                        } else { // damage property
                             heap[ii]->damage_amount = storms[index].events[ii].damage_property;
                         }
                     }
+
                 }
                 // build the heap after the respective array was created
-                build_heap(heap, size);
-
+                build_heap(heap, size, "damage");
+                while(size != 1) {
+                    heap_entry print = deleteHeapEntry(heap, &size, 0, "damage");
+                    if(topMost) {
+                        cout << "\n";
+                        cout << "Event ID: " << print.event_id << "; Event Type: ";
+                        for(int ii=0; ii<upTo; ii++) {
+                            if(storms[ii].events[print.event_index].event_id == print.event_id) {
+                                cout << storms[ii].events[print.event_index].event_type;
+                            }
+                        }
+                        cout << "; Damage Amount: $" << print.damage_amount << endl;
+                        topMost -= 1;
+                    }
+                }
+                // finish deleting the heap
+                delete heap[0];
+                heap = nullptr;
             }
             else if (queries[1] == "event") { // find event in hash table to print fatalities
                 int event_id = stoi(queries[2]);
                 int index = findEntryIndex(table, event_id, tableSize);
                 // default return -1 means invalid index
                 if (index == -1) {
+                    cout << '\n';
                     cout << "Storm event " << event_id << " not found" << endl;
                 }
                 else {
@@ -806,9 +899,13 @@ int main(int argc, char * argv[]) {
                             found = &(storms[ii].events[index]);
                         }
                     }
+                    // print the event
+                    printNewEvent(found);
+
                     // no fatalities were found
                     if(found->f == nullptr) {
-                        cout << "No fatalities" << endl;
+                        cout << '\n';
+                        cout << SPACE << "No fatalities" << endl;
                     }
                     else {
                         // print all associated fatalities
@@ -820,7 +917,7 @@ int main(int argc, char * argv[]) {
                 }
             }
         }
-        cout << "\n\n";
+        cout << "\n";
     }
     return 0;
 }

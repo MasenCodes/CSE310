@@ -58,6 +58,7 @@ struct heap_entry{ // An entry in a max-heap
 	int damage_amount; // Amount of damage to property or crops
 	int year; // Year of storm event
 	int event_index; // For the given year, the index into array of storm events
+    int event_id;
 };
 
 	
