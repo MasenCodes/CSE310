@@ -12,23 +12,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b18cb2b4-5320-4917-8097-1c4b0fe2a8ea" name="Changes" comment="finish max query">
+    <list default="true" id="b18cb2b4-5320-4917-8097-1c4b0fe2a8ea" name="Changes" comment="almost working (just do fatalities)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/README-1950-1953.rtf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/defns.h" beforeDir="false" afterPath="$PROJECT_DIR$/project2/defns.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/find-event-1950-1953.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/find-max-damage-1950-1953.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/find-max-fatality-1950-1953.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/mix-1950-1953.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/output-1950-1953.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/output-1950-only.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/queries-1950-1953.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/queries-1950-only.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/queries-1966-only.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/queries-1996-only.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project2/cmake-build-debug/details-1950.csv" beforeDir="false" afterPath="$PROJECT_DIR$/project2/cmake-build-debug/details-1950.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project2/storm.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/project2/storm.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/test_query.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/tester.cpp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,6 +72,11 @@
     </key>
   </component>
   <component name="RunManager" selected="CMake Application.storm">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="decode.cpp" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="mergesort" REDIRECT_INPUT="true" REDIRECT_INPUT_PATH="$PROJECT_DIR$/ref_input/encoded_tongue-twisters.txt" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="project2" TARGET_NAME="decode.cpp" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="project2" RUN_TARGET_NAME="decode.cpp">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -170,7 +162,9 @@
       <workItem from="1636051732537" duration="4644000" />
       <workItem from="1636155443480" duration="7044000" />
       <workItem from="1636238792813" duration="15790000" />
-      <workItem from="1636268502446" duration="736000" />
+      <workItem from="1636268502446" duration="1393000" />
+      <workItem from="1636317421977" duration="3255000" />
+      <workItem from="1636322358697" duration="1637000" />
     </task>
     <task id="LOCAL-00001" summary="added shift and read">
       <created>1630977554940</created>
@@ -340,7 +334,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636056399685</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="almost working (just do fatalities)">
+      <created>1636269522693</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1636269522693</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -383,7 +384,8 @@
     <MESSAGE value="added final project submission requirements" />
     <MESSAGE value="event query working" />
     <MESSAGE value="finish max query" />
-    <option name="LAST_COMMIT_MESSAGE" value="finish max query" />
+    <MESSAGE value="almost working (just do fatalities)" />
+    <option name="LAST_COMMIT_MESSAGE" value="almost working (just do fatalities)" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
