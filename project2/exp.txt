@@ -1,0 +1,8 @@
+6
+range 1951 month_name "February" "February"
+range 1952 state "AA" "CZ"
+range all month_name "June" "November"
+find max fatality 1951 2
+find max fatality 1952 1
+find max fatality 1953 5
+find max fatality all 5

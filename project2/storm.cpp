@@ -537,6 +537,41 @@ void deleteTree(bst* head) {
     deleteTree(head->right);
     delete head;
 }
+
+int countNodes(bst* head) {
+    if(head == nullptr) {
+        return 0;
+    }
+    else {
+        return (countNodes(head->left) + 1 + countNodes(head->right));
+    }
+}
+
+int leftHeight(bst* head) {
+    if(head == nullptr) {
+        return 0;
+    }
+    int height = leftHeight(head->left);
+    return height + 1;
+}
+
+int rightHeight(bst* head) {
+    if(head == nullptr) {
+        return 0;
+    }
+    int height = rightHeight(head->right);
+    return height + 1;
+}
+
+int treeHeight(bst* head) {
+    int left = leftHeight(head);
+    int right = rightHeight(head);
+    if(left > right) {
+        return left + 1;
+    }
+    return right + 1;
+}
+
 // ------------------------------ End BST Algorithms ---------------------------------
 
 // ----------------------------- Heap Algorithms -------------------------------------

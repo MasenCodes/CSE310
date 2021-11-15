@@ -12,9 +12,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b18cb2b4-5320-4917-8097-1c4b0fe2a8ea" name="Changes" comment="almost working (just do fatalities)">
+    <list default="true" id="b18cb2b4-5320-4917-8097-1c4b0fe2a8ea" name="Changes" comment="WORKING">
+      <change afterPath="$PROJECT_DIR$/project2/exp.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project2/cmake-build-debug/details-1950.csv" beforeDir="false" afterPath="$PROJECT_DIR$/project2/cmake-build-debug/details-1950.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project2/storm.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/project2/storm.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,7 +62,7 @@
     <property name="cmake.loaded.for.project" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/project2/cmake-build-debug" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="dynamic.analysis.tools.valgrind" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -72,9 +73,9 @@
     </key>
   </component>
   <component name="RunManager" selected="CMake Application.storm">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
       </method>
     </configuration>
     <configuration name="decode.cpp" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="mergesort" REDIRECT_INPUT="true" REDIRECT_INPUT_PATH="$PROJECT_DIR$/ref_input/encoded_tongue-twisters.txt" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="project2" TARGET_NAME="decode.cpp" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="project2" RUN_TARGET_NAME="decode.cpp">
@@ -164,7 +165,10 @@
       <workItem from="1636238792813" duration="15790000" />
       <workItem from="1636268502446" duration="1393000" />
       <workItem from="1636317421977" duration="3255000" />
-      <workItem from="1636322358697" duration="1637000" />
+      <workItem from="1636322358697" duration="3411000" />
+      <workItem from="1636349359992" duration="5468000" />
+      <workItem from="1636415878170" duration="152000" />
+      <workItem from="1636761788756" duration="1491000" />
     </task>
     <task id="LOCAL-00001" summary="added shift and read">
       <created>1630977554940</created>
@@ -341,7 +345,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636269522693</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="WORKING">
+      <created>1636324122372</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1636324122372</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -361,6 +372,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/project1" />
+      <path value="$PROJECT_DIR$/project2/CSE310Project2" />
+    </ignored-roots>
     <MESSAGE value="added shift and read" />
     <MESSAGE value="added insertion sort" />
     <MESSAGE value="make insertionSort using pointers" />
@@ -385,7 +400,8 @@
     <MESSAGE value="event query working" />
     <MESSAGE value="finish max query" />
     <MESSAGE value="almost working (just do fatalities)" />
-    <option name="LAST_COMMIT_MESSAGE" value="almost working (just do fatalities)" />
+    <MESSAGE value="WORKING" />
+    <option name="LAST_COMMIT_MESSAGE" value="WORKING" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
