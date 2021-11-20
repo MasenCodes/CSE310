@@ -85,13 +85,13 @@ void print_matrix(vertex** matrix, int size) {
         for(int jj=0; jj<odd_size; jj++) {
             if(first) {  // only print left index of vertical once for each ii
                 if(odds[ii].val > 99) {
-                    std::cout << odds[ii].val << " | ";  // 1 left space
+                    std::cout << odds[ii].val << "  | ";  // 1 left space
                 }
                 else if(odds[ii].val > 9) {
-                    std::cout << " " << odds[ii].val << " | ";  // 2 left spaces
+                    std::cout << " " << odds[ii].val << "  | ";  // 2 left spaces
                 }
                 else {
-                    std::cout << "  " << odds[ii].val << " | ";  // 3 left spaces
+                    std::cout << "  " << odds[ii].val << "  | ";  // 3 left spaces
                 }
             }
             first = false;
