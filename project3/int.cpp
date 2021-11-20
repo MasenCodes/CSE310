@@ -1,7 +1,6 @@
 #include <iostream>
 #include <cstdlib>
 #include <string>
-#include "algorithms.cpp"
 #include "helper_functions.cpp"
 
 using namespace std;
@@ -28,17 +27,13 @@ int main(int argc, char * argv[]) {
         int b;  // value after space
         parse_line(connection, &a, &b);
 
-        // map the connection in the adjacency matrix
-        adj_matrix[a - 1][b - 1].val = 1;
-        adj_matrix[a - 1][b - 1].degree += 1;
-        adj_matrix[b - 1][a - 1].val = 1;
-        adj_matrix[b - 1][a - 1].degree += 1;
+        // add data to matrix
+        add_connection(adj_matrix, a, b);
     }
 
-    for(int ii=0; ii<vertices; ii++) {
-        for(int jj=0; jj<vertices; jj++) {
-            cout << adj_matrix[ii][jj].degree << " ";
-        }
-        cout << "\n";
-    }
+    // after reading data into adjacency matrix, print the ones with odd degrees
+    print_odds(adj_matrix, vertices);
+
+    FLOYD_WARSHALL(adj_matrix, vertices);
+    print_matrix(adj_matrix, vertices);
 }
