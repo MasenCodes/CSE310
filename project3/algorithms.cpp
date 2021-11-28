@@ -36,14 +36,6 @@ vertex* get_degrees(vertex** matrix, int size) {
     return result;
 }
 
-weight_list* create_head(weight_list* h, edge e) {
-    auto* w = new weight_list;
-    w->prev = nullptr;
-    w->next = nullptr;
-    w->e = e;
-    return w;
-}
-
 weight_list* add_edge(weight_list* w, edge e) {
     if(w == nullptr) {
         auto* head = new weight_list;
@@ -143,17 +135,17 @@ weight_list* get_virtual_edges(vertex** matrix, int size) {
     weight_list* all = create_weight_list(matrix, size);  // sorted odd degree edges
     weight_list* added = nullptr;
 
-    while(all != nullptr) {
+    while(all != nullptr) {  // go through all the found vertices
         weight_list* itr = added;
         bool can_add = true;
-        while(itr != nullptr) {
+        while(itr != nullptr) {  // find if we have added one of the vertices to final list
             if(itr->e.u == all->e.u or itr->e.u == all->e.v or itr->e.v == all->e.u or itr->e.v == all->e.v) {
                 can_add = false;
                 break;
             }
             itr = itr->next;
         }
-        if(can_add) {
+        if(can_add) {  // add (if applicable)
             added = add_edge(added, all->e);
         }
         all = all->next;
@@ -191,9 +183,10 @@ void add_adjacency(adj** list, int u, int v) {
 }
 
 int find_next(adj** list, int index, int prev, int size) {
+    // finds next vertex to traverse to
     adj* itr = list[index];
     if(itr == nullptr) {
-        return size;
+        return size;  // default for nullptr
     }
     while(itr->next != nullptr) {
         if(itr->val != prev) {
@@ -205,9 +198,10 @@ int find_next(adj** list, int index, int prev, int size) {
 }
 
 void remove(adj** list, int u, int v) {
+    // removes adjacency from the list
     adj* itr = list[u];
     adj* prev = itr;
-    while(itr->val != v) {
+    while(itr->val != v) {  // remove first instance
         prev = itr;
         itr = itr->next;
     }
@@ -217,9 +211,11 @@ void remove(adj** list, int u, int v) {
     else {
         prev->next = itr->next;
     }
+
+    // reset pointer
     itr = list[v];
     prev = itr;
-    while(itr->val != u) {
+    while(itr->val != u) {  // remove second instance
         prev = itr;
         itr = itr->next;
     }
@@ -231,29 +227,8 @@ void remove(adj** list, int u, int v) {
     }
 }
 
-circuit* add_to_circuit(circuit* c, int u, int v) {
-    edge* e = new edge;
-    e->u = u;
-    e->v = v;
-    if(c == nullptr) {
-        auto* ret = new circuit;
-        ret->next = nullptr;
-        ret->e = *e;
-        return ret;
-    }
-
-    circuit* itr = c;
-    while(itr->next != nullptr) {
-        itr = itr->next;
-    }
-
-    itr->next = new circuit;
-    itr->next->next = nullptr;
-    itr->next->e = *e;
-    return c;
-}
-
 weight_list* add_edge_rev(weight_list* w, edge e) {
+    // adds path for virtual edge in reverse to traverse in order of last vertex
     if(w == nullptr) {
         auto* head = new weight_list;
         head->prev = nullptr;
@@ -262,6 +237,7 @@ weight_list* add_edge_rev(weight_list* w, edge e) {
         return head;
     }
 
+    // make the 'head' always point to the 'tail'
     w->next = new weight_list;
     w->next->next = nullptr;
     w->next->prev = w;
@@ -271,6 +247,7 @@ weight_list* add_edge_rev(weight_list* w, edge e) {
 
 
 void find_path(vertex** matrix, int matrixSize, int start, int end) {
+    // finds path from end to current vertex for a virtual edge in matrix
     weight_list* w = nullptr;
     for(int ii=0; ii<matrixSize; ii++) {
         if(matrix[start][ii].val == 1) {
@@ -287,28 +264,15 @@ void find_path(vertex** matrix, int matrixSize, int start, int end) {
         }
     }
     while(w != nullptr) {
-        std::cout << "      (" << w->e.u + 1 << "," << w->e.v + 1 << ")\n";
+        std::cout << "\t(" << w->e.u + 1 << "," << w->e.v + 1 << ")\n";
         w = w->prev;
     }
 
 }
 
-
-void print_ad_list(adj** list, int size) {
-    for(int ii=0; ii<size; ii++) {
-        adj* itr = list[ii];
-        std::cout << ii + 1 << ": ";
-        while(itr != nullptr) {
-            std::cout << itr->val + 1 << " ";
-            itr = itr->next;
-        }
-        std::cout <<"\n";
-    }
-}
-
 void print_circuit(vertex** matrix, int matrixSize, adj** list, weight_list* vrt_edges) {
+    // variables to map the circuit
     Stack edges;
-
     int prev = 0;
     int next = 0;
     int u = 0;
@@ -317,24 +281,32 @@ void print_circuit(vertex** matrix, int matrixSize, adj** list, weight_list* vrt
     std::cout << "The Euler circuit in G with virtual edges is:\n";
 
     do {
+        // find next point to 'move' to
         next = find_next(list, prev, not_ok, matrixSize);
-        if(next == matrixSize) {
-            std::cout << "      (" << u + 1 << "," << not_ok + 1 << ")\n";
 
+        // default value for no more connections
+        if(next == matrixSize) {
+            // print what we 'added' to circuit
+            std::cout << "\t(" << u + 1 << "," << not_ok + 1 << ")\n";
+
+            // set predecessors and remove from stack
             u = prev = not_ok;
             edges.pop();
             not_ok = edges.get_last_node();
         }
         else {
+            // add edge to stack and reset predecessors
             edges.push(prev, next);
-            //std::cout << "adding: " << "(" << prev + 1 << "," << next + 1 << ")\n";
             remove(list, prev, next);
             not_ok = prev;
             prev = next;
 
+            // found next edge for circuit
             if(next == u) {
-                std::cout << "      (" << u + 1 << "," << not_ok + 1 << ")\n";
+                // print what we 'added' to circuit
+                std::cout << "\t(" << u + 1 << "," << not_ok + 1 << ")\n";
 
+                // set predecessors and remove from stack
                 u = prev = not_ok;
                 edges.pop();
                 not_ok = edges.get_last_node();
@@ -344,12 +316,14 @@ void print_circuit(vertex** matrix, int matrixSize, adj** list, weight_list* vrt
             weight_list* itr = vrt_edges;
             int ref = find_next(list, prev, not_ok, matrixSize);
             while(itr != nullptr) {
+                // only accept them in order
                 if(prev == itr->e.u and itr->e.v < ref) {
+                    // add to stack and reset predecessors
                     edges.push(prev, itr->e.v);
-                    //std::cout << "adding: " << "(" << prev + 1 << "," << itr->e.v + 1 << ")\n";
                     not_ok = prev;
                     prev = itr->e.v;
 
+                    // found the next edge for circuit
                     if(itr->e.v == u) {
                         find_path(matrix, matrixSize, not_ok, itr->e.v);
                         u = prev = not_ok;
@@ -376,12 +350,14 @@ void print_circuit(vertex** matrix, int matrixSize, adj** list, weight_list* vrt
                     }
                     break;
                 }
+                // only accept in order
                 else if(prev == itr->e.v and itr->e.u < ref) {
+                    // add to stack and reset predecessors
                     edges.push(prev, itr->e.u);
-                    //std::cout << "adding: " << "(" << prev + 1 << "," << itr->e.u + 1 << ")\n";
                     not_ok = next;
                     prev = itr->e.u;
 
+                    // found the next edge for circuit
                     if(itr->e.u == u) {
                         find_path(matrix, matrixSize, not_ok, itr->e.u);
                         u = prev = not_ok;

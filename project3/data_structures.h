@@ -18,11 +18,6 @@ struct weight_list {
     weight_list* prev;
 };
 
-struct circuit {
-    edge e;
-    circuit* next;
-};
-
 struct adj {
     int val;
     adj* next;

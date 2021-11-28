@@ -1,6 +1,4 @@
 #include <iostream>
-#include <cstdlib>
-#include <string>
 #include "helper_functions.cpp"
 
 using namespace std;
@@ -38,16 +36,14 @@ int main(int argc, char * argv[]) {
     // after reading data into adjacency matrix, print the ones with odd degrees
     print_odds(adj_matrix, vertices);
 
-    // find shortest paths and print result
+    // create the shortest path matrix and print the odd vertices that result
     FLOYD_WARSHALL(adj_matrix, vertices);
     print_matrix(adj_matrix, vertices);
-    //print_full_matrix(adj_matrix, vertices);
 
     // get odd degree vertices to be used as virtual edges (returned in sorted order)
     weight_list* virtual_edges = get_virtual_edges(adj_matrix, vertices);
-    //print_list(virtual_edges);
+    print_list(virtual_edges);
 
     // now get the euler circuit
     print_circuit(adj_matrix, vertices, list, virtual_edges);
-    //print_adj_list(list, vertices);
 }

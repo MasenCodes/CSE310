@@ -212,29 +212,11 @@ void print_odds(vertex** matrix, int size) {
 
 void print_list(weight_list* h) {
     weight_list* itr = h;
-    int prev = -1;
+    std::cout << "The greedy perfect matching in O: M = {";
     while(itr != nullptr) {
-        if(itr->e.weight > prev) {
-            if(prev != -1) {
-                std::cout << "\n";
-            }
-            std::cout << "Edges of length " <<  itr->e.weight << ": ";
-            prev = itr->e.weight;
-        }
         std::cout << " (" << itr->e.u + 1 << "," << itr->e.v + 1 << ")";
         itr = itr->next;
     }
-    std::cout << "\n";
+    std::cout << " }\n\n";
 }
 
-void print_adj_list(adj** list, int size) {
-    for(int ii=0; ii<size; ii++) {
-        adj* itr = list[ii];
-        std::cout << ii + 1 << ": ";
-        while(itr != nullptr) {
-            std::cout << itr->val + 1 << " ";
-            itr = itr->next;
-        }
-        std::cout <<"\n";
-    }
-}
