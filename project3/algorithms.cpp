@@ -273,62 +273,62 @@ void find_path(vertex** matrix, int matrixSize, int start, int end) {
 void print_circuit(vertex** matrix, int matrixSize, adj** list, weight_list* vrt_edges) {
     // variables to map the circuit
     Stack edges;
-    int prev = 0;
+    int from = 0;
     int next = 0;
     int u = 0;
-    int not_ok = 0;
+    int last = 0;
 
     std::cout << "The Euler circuit in G with virtual edges is:\n";
 
     do {
         // find next point to 'move' to
-        next = find_next(list, prev, not_ok, matrixSize);
+        next = find_next(list, from, last, matrixSize);
 
         // default value for no more connections
         if(next == matrixSize) {
             // print what we 'added' to circuit
-            std::cout << "\t(" << u + 1 << "," << not_ok + 1 << ")\n";
+            std::cout << "\t(" << u + 1 << "," << last + 1 << ")\n";
 
             // set predecessors and remove from stack
-            u = prev = not_ok;
+            u = from = last;
             edges.pop();
-            not_ok = edges.get_last_node();
+            last = edges.get_last_node();
         }
         else {
             // add edge to stack and reset predecessors
-            edges.push(prev, next);
-            remove(list, prev, next);
-            not_ok = prev;
-            prev = next;
+            edges.push(from, next);
+            remove(list, from, next);
+            last = from;
+            from = next;
 
             // found next edge for circuit
             if(next == u) {
                 // print what we 'added' to circuit
-                std::cout << "\t(" << u + 1 << "," << not_ok + 1 << ")\n";
+                std::cout << "\t(" << u + 1 << "," << last + 1 << ")\n";
 
                 // set predecessors and remove from stack
-                u = prev = not_ok;
+                u = from = last;
                 edges.pop();
-                not_ok = edges.get_last_node();
+                last = edges.get_last_node();
             }
 
             // check for virtual edges
             weight_list* itr = vrt_edges;
-            int ref = find_next(list, prev, not_ok, matrixSize);
+            int ref = find_next(list, from, last, matrixSize);
             while(itr != nullptr) {
                 // only accept them in order
-                if(prev == itr->e.u and itr->e.v < ref) {
+                if(from == itr->e.u and itr->e.v < ref) {
                     // add to stack and reset predecessors
-                    edges.push(prev, itr->e.v);
-                    not_ok = prev;
-                    prev = itr->e.v;
+                    edges.push(from, itr->e.v);
+                    last = from;
+                    from = itr->e.v;
 
                     // found the next edge for circuit
                     if(itr->e.v == u) {
-                        find_path(matrix, matrixSize, not_ok, itr->e.v);
-                        u = prev = not_ok;
+                        find_path(matrix, matrixSize, last, itr->e.v);
+                        u = from = last;
                         edges.pop();
-                        not_ok = edges.get_last_node();
+                        last = edges.get_last_node();
                     }
 
                     // remove
@@ -351,18 +351,18 @@ void print_circuit(vertex** matrix, int matrixSize, adj** list, weight_list* vrt
                     break;
                 }
                 // only accept in order
-                else if(prev == itr->e.v and itr->e.u < ref) {
+                else if(from == itr->e.v and itr->e.u < ref) {
                     // add to stack and reset predecessors
-                    edges.push(prev, itr->e.u);
-                    not_ok = next;
-                    prev = itr->e.u;
+                    edges.push(from, itr->e.u);
+                    last = next;
+                    from = itr->e.u;
 
                     // found the next edge for circuit
                     if(itr->e.u == u) {
-                        find_path(matrix, matrixSize, not_ok, itr->e.u);
-                        u = prev = not_ok;
+                        find_path(matrix, matrixSize, last, itr->e.u);
+                        u = from = last;
                         edges.pop();
-                        not_ok = edges.get_last_node();
+                        last = edges.get_last_node();
                     }
 
                     // remove

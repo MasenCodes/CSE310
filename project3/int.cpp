@@ -43,6 +43,7 @@ int main(int argc, char * argv[]) {
     // get odd degree vertices to be used as virtual edges (returned in sorted order)
     weight_list* virtual_edges = get_virtual_edges(adj_matrix, vertices);
     print_list(virtual_edges);
+    //print_adj_list(list, vertices);
 
     // now get the euler circuit
     print_circuit(adj_matrix, vertices, list, virtual_edges);

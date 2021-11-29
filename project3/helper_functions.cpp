@@ -50,78 +50,91 @@ void print_matrix(vertex** matrix, int size) {
     // print the title
     std::cout << "Results of Floyd-Warshall on O:\n";
 
-    // print out upper row with all odd values
-    std::cout << "     | ";  // top-most divider bar
-    int odd_size = 0;  // size for the rest of the print
+    bool print_odds = false;
     for(int ii=0; ii<size; ii++) {
         if(vertices[ii].degree % 2 != 0) {
-            odd_size += 1;
-            if(vertices[ii].val + 1 > 99) {
-                std::cout << " " << vertices[ii].val + 1;  // 1 space total
-            }
-            else if(vertices[ii].val + 1 > 9) {
-                std::cout << "  " << vertices[ii].val + 1;  // 2 spaces total
-            }
-            else {
-                std::cout << "   " << vertices[ii].val + 1;  // 3 spaces total
-            }
-        }
-    }
-    std::cout << "\n";
-
-    // make array to hold only odd degree vertices
-    auto* odds = new vertex[odd_size];
-    int index = 0;
-    for(int ii=0; ii<size; ii++) {
-        if(vertices[ii].degree % 2 != 0) {
-            odds[index] = vertices[ii];
-            index++;
+            print_odds = true;
+            break;
         }
     }
 
-    // print out upper table divider
-    std::cout << "--- -+-";
-    for(int ii=0; ii<odd_size; ii++) {
-        std::cout << " ---";
-    }
-    std::cout << "\n";
-
-    // print each row of table
-    for(int ii=0; ii<odd_size; ii++) {
-        bool first = true;
-        for(int jj=0; jj<odd_size; jj++) {
-            if(first) {  // only print left index of vertical once for each ii
-                if(odds[ii].val + 1 > 99) {
-                    std::cout << odds[ii].val + 1 << "  | ";  // 0 left spaces
+    if(print_odds) {
+        // print out upper row with all odd values
+        std::cout << "     | ";  // top-most divider bar
+        int odd_size = 0;  // size for the rest of the print
+        for(int ii=0; ii<size; ii++) {
+            if(vertices[ii].degree % 2 != 0) {
+                odd_size += 1;
+                if(vertices[ii].val + 1 > 99) {
+                    std::cout << " " << vertices[ii].val + 1;  // 1 space total
                 }
-                else if(odds[ii].val + 1 > 9) {
-                    std::cout << " " << odds[ii].val + 1 << "  | ";  // 1 left space
+                else if(vertices[ii].val + 1 > 9) {
+                    std::cout << "  " << vertices[ii].val + 1;  // 2 spaces total
                 }
                 else {
-                    std::cout << "  " << odds[ii].val + 1 << "  | ";  // 2 left spaces
+                    std::cout << "   " << vertices[ii].val + 1;  // 3 spaces total
                 }
-                first = false;
-            }
-
-            // print the value to align with given formatting
-            int path_len = matrix[odds[ii].val][odds[jj].val].val;  // index the matrix at given vertices
-            if(path_len > 99) {
-                std::cout << " " << path_len;  // 1 space total
-            }
-            else if(path_len > 9) {
-                std::cout << "  " << path_len;  // 2 spaces total
-            }
-            else {
-                std::cout << "   " << path_len;  // 3 spaces total
             }
         }
         std::cout << "\n";
-    }
-    std::cout << "\n";
 
-    // free memory
-    delete[] vertices;
-    delete[] odds;
+        // make array to hold only odd degree vertices
+        auto* odds = new vertex[odd_size];
+        int index = 0;
+        for(int ii=0; ii<size; ii++) {
+            if(vertices[ii].degree % 2 != 0) {
+                odds[index] = vertices[ii];
+                index++;
+            }
+        }
+
+        // print out upper table divider
+        std::cout << "--- -+-";
+        for(int ii=0; ii<odd_size; ii++) {
+            std::cout << " ---";
+        }
+        std::cout << "\n";
+
+        // print each row of table
+        for(int ii=0; ii<odd_size; ii++) {
+            bool first = true;
+            for(int jj=0; jj<odd_size; jj++) {
+                if(first) {  // only print left index of vertical once for each ii
+                    if(odds[ii].val + 1 > 99) {
+                        std::cout << odds[ii].val + 1 << "  | ";  // 0 left spaces
+                    }
+                    else if(odds[ii].val + 1 > 9) {
+                        std::cout << " " << odds[ii].val + 1 << "  | ";  // 1 left space
+                    }
+                    else {
+                        std::cout << "  " << odds[ii].val + 1 << "  | ";  // 2 left spaces
+                    }
+                    first = false;
+                }
+
+                // print the value to align with given formatting
+                int path_len = matrix[odds[ii].val][odds[jj].val].val;  // index the matrix at given vertices
+                if(path_len > 99) {
+                    std::cout << " " << path_len;  // 1 space total
+                }
+                else if(path_len > 9) {
+                    std::cout << "  " << path_len;  // 2 spaces total
+                }
+                else {
+                    std::cout << "   " << path_len;  // 3 spaces total
+                }
+            }
+            std::cout << "\n";
+        }
+        std::cout << "\n";
+
+        // free memory
+        delete[] vertices;
+        delete[] odds;
+    }
+    else {
+        std::cout << "\n";
+    }
 }
 
 void print_full_matrix(vertex** matrix, int size) {
@@ -220,3 +233,14 @@ void print_list(weight_list* h) {
     std::cout << " }\n\n";
 }
 
+void print_adj_list(adj** list, int size) {
+    for(int ii=0; ii<size; ii++) {
+        adj* itr = list[ii];
+        std::cout << ii + 1 << ": ";
+        while(itr != nullptr) {
+            std::cout << itr->val + 1 << " ";
+            itr = itr->next;
+        }
+        std::cout <<"\n";
+    }
+}
